@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://mazhuang.org
+url: http://zhangjinmiao.github.io/
 date_format: "ordinal"
 title: CPU一直转
 subtitle: "脚踏实地，勇往直前"
@@ -81,7 +81,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: mzlogin/mzlogin.github.io
+repository: zhangjinmiao/zhangjinmiao.github.io
 
 # ---------------- #
 #      Comments    #
