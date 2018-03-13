@@ -1,17 +1,33 @@
+- name: 廖雪峰的官方网站
+  url: https://www.liaoxuefeng.com/
+
+- name: 阮一峰的个人网站
+  url: http://www.ruanyifeng.com/home.html
+  
+- name: 凤凰牌老熊
+  url: http://blog.lixf.cn/
+  
+- name: 酷 壳 – CoolShell
+  url: https://coolshell.cn/
+  
+  
+- name: 纯洁的微笑
+  url: http://www.ityouknow.com/
+
+- name: 梁桂钊
+  url: http://blog.720ui.com/
+
+- name: 泥瓦匠BYSocket
+  url: https://www.bysocket.com/
+
+- name: 程序猿DD
+  url: http://blog.didispace.com/
+
+- name: 嘟嘟独立博客
+  url: http://tengj.top/
+
+- name: 死磕Java系列博客
+  url：http://cmsblogs.com/
+  
 - name: 码志
   url: http://mazhuang.org
-
-- name: Connie 酱
-  url: https://connie99.github.io
-
-- name: 只宁静不致远
-  url: http://zxning.github.io
-
-- name: Blog Something
-  url: http://chenxiaoyoyo.github.io
-
-- name: 日新亭
-  url: http://www.fengerzh.com/
-
-- name: 尧哥
-  url: http://www.shishuyao.com
