@@ -1,4 +1,14 @@
-[TOC]
+---
+layout: post
+title: List 源码分析
+categories: Java
+description: ArrayList LinkedList Vector 
+keywords: List, Java
+---
+
+
+
+
 
 ## ArrayList源码分析 
 

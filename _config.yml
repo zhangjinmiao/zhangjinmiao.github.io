@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://zhangjinmiao.github.io/
+url: http://zhangjinmiao.github.io
 date_format: "ordinal"
 title: CPU一直转
 subtitle: "脚踏实地，勇往直前"
