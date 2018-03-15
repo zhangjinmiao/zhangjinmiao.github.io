@@ -10,6 +10,7 @@
 - name: 酷 壳 – CoolShell
   url: https://coolshell.cn/
   
+  
 - name: 纯洁的微笑
   url: http://www.ityouknow.com/
 
@@ -26,7 +27,7 @@
   url: http://tengj.top/
 
 - name: 死磕Java系列博客
-  url：http://cmsblogs.com
+  url: http://cmsblogs.com/
   
 - name: 码志
   url: http://mazhuang.org
