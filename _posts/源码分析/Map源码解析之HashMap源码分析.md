@@ -26,7 +26,7 @@ HashMap基于hashing原理，当我们往 HashMap 中 put 元素时，先根据 
 
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-![hashmap结构](E:\github\zhangjinmiao.github.io\assets\images\blog\hashmap结构.jpg)
+![hashmap结构](https://github.com/zhangjinmiao/zhangjinmiao.github.io/blob/master/assets/images/2018/map/hashmap1.jpg)
 
 
 Node[] table的初始化长度length(默认值是16)，Load factor为负载因子(默认值是0.75)，threshold是HashMap所能容纳的最大数据量的Node(键值对)个数。
@@ -209,7 +209,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
     }
 ```
 
- ![hashmap之put](E:\github\zhangjinmiao.github.io\assets\images\blog\hashmap之put.jpg)
+ ![hashmap之put](https://github.com/zhangjinmiao/zhangjinmiao.github.io/blob/master/assets/images/2018/map/hashmap2.jpg)
 
 
 ### 读取 get(Object key)
