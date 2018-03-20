@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Map源码解析之HashMap源码分析
-categories: 源码分析, 集合
+categories: Java,SourceCode
 description: HashMap 源码分析
-keywords: Map、HashMap、源码
+keywords: Map,HashMap,源码
 ---
 
 ## 实现原理
