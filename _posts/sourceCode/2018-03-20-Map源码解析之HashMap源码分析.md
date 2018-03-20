@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Map源码解析之HashMap源码分析
-categories: [Java, SourceCode]
+categories: [SourceCode]
 description: HashMap 源码分析
 keywords: Map,HashMap,源码
 ---
@@ -290,7 +290,7 @@ public V remove(Object key) {
 
 - Hashtable替换HashMap
 - Collections.synchronizedMap将HashMap包装起来
-- ConcurrentHashMap替换HashMap （推荐）
+- ConcurrentHashMap替换HashMap （推荐 ）
 
 
 
