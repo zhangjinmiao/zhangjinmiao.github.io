@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Map源码解析之HashMap源码分析
-categories: Java,SourceCode
+categories: [Java, SourceCode]
 description: HashMap 源码分析
 keywords: Map,HashMap,源码
 ---
@@ -10,31 +10,25 @@ keywords: Map,HashMap,源码
 
 ## 实现原理
 
-HashMap 实际上是一个“链表散列”的数据结构，即**数组和链表**的结合体。
-
 HashMap 是数组 + 链表 + 红黑树（**JDK1.8 增加了红黑树部分**）实现的。
 
 
 
-**HashMap 的工作原理：**
+### **HashMap 的工作原理：**
 
 HashMap 基于 **hashing** 原理，当我们往 HashMap 中 put 元素时，先根据 key 的 hash 值得到这个 Entry 元素在数组中的位置（即下标），然后把这个 Entry 元素放到对应的位置中，如果这个 Entry 元素所在的位子上已经存放有其他元素就在同一个位子上的 Entry 元素**以链表**的形式存放，新加入的放在链头( ***JDK 1.8 以前碰撞节点会在链表头部插入，而 JDK 1.8 开始碰撞节点会在链表尾部插入，对于扩容操作后的节点转移 JDK 1.8 以前转移前后链表顺序会倒置，而 JDK 1.8 中依然保持原序***。)，从 HashMap 中 get  Entry 元素时先计算 key 的 hashcode，找到数组中对应位置的某一 Entry 元素，然后通过 key 的 equals 方法在对应位置的链表中找到需要的 Entry 元素，所以 HashMap 的数据结构是数组和链表的结合，此外 HashMap 中 key 和 value 都允许为 null，key 为 null 的键值对永远都放在以 table[0] 为头结点的链表中。 HashMap 在每个链表节点中储存键值对对象。
 
 
 
-**当两个不同的键对象的hashcode相同时会发生什么？**
+### **当两个不同的键对象的hashcode相同时会发生什么？**
 
 它们会储存在同一个bucket位置的链表中。键对象的equals()方法用来找到键值对。
 
 
 
-> 作者：潜龙勿用
->
-> 链接：https://www.zhihu.com/question/20733617/answer/259163516
+![hashmap结构](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/map/hashmap1.jpg)
 
 
-
-![hashmap结构](https://github.com/zhangjinmiao/zhangjinmiao.github.io/blob/master/assets/images/2018/map/hashmap1.jpg)
 
 
 Node[] table 的初始化长度 length (默认值是16)，Load factor 为负载因子(默认值是 0.75 )，threshold 是HashMap 所能容纳的最大数据量的 Node (键值对)个数。
@@ -73,7 +67,6 @@ transient int modCount;
 int threshold;
 //哈希表的装载因子 
 final float loadFactor;
-
 
 ```
 
@@ -121,9 +114,9 @@ static class Node<K,V> implements Map.Entry<K,V> {
     }
 ```
 
-### 确定哈希桶数组索引位置—— hash(Object key)
+### hash(Object key)
 
-本质上就三部：**取 key 的 hashCode 值、高位运算、取模运算**。
+确定哈希桶数组索引位置，本质上就三部：**取 key 的 hashCode 值、高位运算、取模运算**。
 
 ```java
 方法一：
@@ -207,7 +200,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict) {
     }
 ```
 
- ![hashmap之put](https://github.com/zhangjinmiao/zhangjinmiao.github.io/blob/master/assets/images/2018/map/hashmap2.jpg)
+ ![hashmap之put](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/map/hashmap2.jpg)
 
 
 ### 读取 get(Object key)
@@ -271,11 +264,37 @@ public V remove(Object key) {
 
 **使用一个新的数组代替已有的容量小的数组**
 
-### 线程安全性
+### HashMap 并发问题
 
-高并发情况下会出现**死循环**，即会出现 **环形链表**。
+#### 多线程put后可能导致get死循环
 
-### 总结
+由于 HashMap 是线程不安全的，高并发情况下会出现**死循环**，即会出现 **环形链表**，进而导致 CPU 被占满的情况。
+
+**具体分析：**
+
+单线程情况下，HashMap 重复插入某个值的时候，会覆盖之前的值，这个没错。但在多线程访问的时候，由于其内部实现机制(在多线程环境且未作同步的情况下，对同一个 HashMap 做 put 操作可能导致两个或以上线程同时做 rehash 动作，就可能导致循环键表出现，一旦出现线程将无法终止，持续占用 CPU ，导致 CPU 使用率居高不下)，就可能出现安全问题了。
+
+办法：使用jstack工具dump出问题的那台服务器的栈信息，查看具体日志信息。
+
+注意：不合理使用HashMap导致出现的是死循环而不是死锁。
+
+
+
+#### 多线程put的时候可能导致元素丢失
+
+主要问题出在addEntry方法的new Entry (hash, key, value, e)，如果两个线程都同时取得了e,则他们下一个元素都是e，然后赋值给table元素的时候有一个成功有一个丢失。
+
+
+
+#### 三种解决方案
+
+- Hashtable替换HashMap
+- Collections.synchronizedMap将HashMap包装起来
+- ConcurrentHashMap替换HashMap （推荐）
+
+
+
+## 总结
 
 1. 扩容是一个特别耗性能的操作，所以当程序员在使用 HashMap 的时候，估算 map 的大小，初始化的时候给一个大致的数值，避免 map 进行频繁的扩容。
 2. 负载因子是可以修改的，也可以大于1，但是建议不要轻易修改，除非情况非常特殊。
@@ -291,5 +310,6 @@ public V remove(Object key) {
 
 - [疫苗：Java HashMap的死循环](https://coolshell.cn/articles/9606.html)
 
-  ​
+- [潜龙勿用](https://www.zhihu.com/question/20733617/answer/259163516)
 
+  ​
