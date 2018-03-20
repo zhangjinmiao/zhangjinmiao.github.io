@@ -6,38 +6,46 @@ description: HashMap 源码分析
 keywords: Map,HashMap,源码
 ---
 
+注：文中源码为 JDK 1.8 。
+
 ## 实现原理
 
-HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。
+HashMap 实际上是一个“链表散列”的数据结构，即**数组和链表**的结合体。
 
-HashMap是数组+链表+红黑树（**JDK1.8增加了红黑树部分**）实现的。
+HashMap 是数组 + 链表 + 红黑树（**JDK1.8 增加了红黑树部分**）实现的。
 
-**HashMap的工作原理：**
 
-HashMap基于hashing原理，当我们往 HashMap 中 put 元素时，先根据 key 的 hash 值得到这个 Entry 元素在数组中的位置（即下标），然后把这个 Entry 元素放到对应的位置中，如果这个 Entry 元素所在的位子上已经存放有其他元素就在同一个位子上的 Entry 元素以链表的形式存放，新加入的放在链头( ***JDK 1.8 以前碰撞节点会在链表头部插入，而 JDK 1.8 开始碰撞节点会在链表尾部插入，对于扩容操作后的节点转移 JDK 1.8 以前转移前后链表顺序会倒置，而 JDK 1.8 中依然保持原序***。)，从 HashMap 中 get  Entry 元素时先计算 key 的 hashcode，找到数组中对应位置的某一 Entry 元素，然后通过 key 的 equals 方法在对应位置的链表中找到需要的 Entry 元素，所以 HashMap 的数据结构是数组和链表的结合，此外 HashMap 中 key 和 value 都允许为 null，key 为 null 的键值对永远都放在以 table[0] 为头结点的链表中。。 HashMap在每个链表节点中储存键值对对象。
 
-当两个不同的键对象的hashcode相同时会发生什么？ 它们会储存在同一个bucket位置的链表中。键对象的equals()方法用来找到键值对。
+**HashMap 的工作原理：**
 
-作者：潜龙勿用
+HashMap 基于 **hashing** 原理，当我们往 HashMap 中 put 元素时，先根据 key 的 hash 值得到这个 Entry 元素在数组中的位置（即下标），然后把这个 Entry 元素放到对应的位置中，如果这个 Entry 元素所在的位子上已经存放有其他元素就在同一个位子上的 Entry 元素**以链表**的形式存放，新加入的放在链头( ***JDK 1.8 以前碰撞节点会在链表头部插入，而 JDK 1.8 开始碰撞节点会在链表尾部插入，对于扩容操作后的节点转移 JDK 1.8 以前转移前后链表顺序会倒置，而 JDK 1.8 中依然保持原序***。)，从 HashMap 中 get  Entry 元素时先计算 key 的 hashcode，找到数组中对应位置的某一 Entry 元素，然后通过 key 的 equals 方法在对应位置的链表中找到需要的 Entry 元素，所以 HashMap 的数据结构是数组和链表的结合，此外 HashMap 中 key 和 value 都允许为 null，key 为 null 的键值对永远都放在以 table[0] 为头结点的链表中。 HashMap 在每个链表节点中储存键值对对象。
 
-链接：https://www.zhihu.com/question/20733617/answer/259163516
 
-来源：知乎
 
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+**当两个不同的键对象的hashcode相同时会发生什么？**
+
+它们会储存在同一个bucket位置的链表中。键对象的equals()方法用来找到键值对。
+
+
+
+> 作者：潜龙勿用
+>
+> 链接：https://www.zhihu.com/question/20733617/answer/259163516
+
+
 
 ![hashmap结构](https://github.com/zhangjinmiao/zhangjinmiao.github.io/blob/master/assets/images/2018/map/hashmap1.jpg)
 
 
-Node[] table的初始化长度length(默认值是16)，Load factor为负载因子(默认值是0.75)，threshold是HashMap所能容纳的最大数据量的Node(键值对)个数。
+Node[] table 的初始化长度 length (默认值是16)，Load factor 为负载因子(默认值是 0.75 )，threshold 是HashMap 所能容纳的最大数据量的 Node (键值对)个数。
 
-threshold就是在此Load factor和length(数组长度)对应下允许的最大元素数目，超过这个数目就重新resize(扩容)，扩容后的HashMap容量是之前容量的**两倍**。
+threshold 就是在此 Load factor 和 length (数组长度)对应下允许的最大元素数目，超过这个数目就重新 resize (扩容)，扩容后的 HashMap 容量是之前容量的**两倍**。
 
-在HashMap中，**哈希桶数组table的长度length大小必须为2的n次方**(一定是合数)，这是一种非常规的设计，常规的设计是把桶的大小设计为素数。相对来说素数导致冲突的概率要小于合数[2].
+在 HashMap 中，**哈希桶数组 table 的长度 length 大小必须为 2 的 n 次方**(一定是合数)，这是一种非常规的设计，常规的设计是把桶的大小设计为素数。相对来说素数导致冲突的概率要小于合数。
 
-HashMap采用这种非常规设计，主要是**为了在取模和扩容时做优化**，同时为了减少冲突，HashMap定位哈希桶索引位置时，也加入了高位参与运算的过程。
+HashMap 采用这种非常规设计，主要是**为了在取模和扩容时做优化**，同时为了减少冲突，HashMap 定位哈希桶索引位置时，也加入了高位参与运算的过程。
 
-当链表长度太长（默认超过8）时，链表就转换为红黑树，利用红黑树快速增删改查的特点提高HashMap的性能。
+当链表长度太长（默认超过 8 ）时，链表就转换为[红黑树](https://baike.baidu.com/item/%E7%BA%A2%E9%BB%91%E6%A0%91/2413209?fr=aladdin)，利用红黑树快速增删改查的特点提高 HashMap 的性能。
 
 ## 属性和构造函数
 
@@ -69,7 +77,7 @@ final float loadFactor;
 
 ```
 
-Node是HashMap的一个内部类，实现了Map.Entry接口，本质是就是一个映射(键值对)。
+Node 是 HashMap 的一个内部类，实现了 Map.Entry 接口，本质是就是一个映射(键值对)。
 
 ```java
 static class Node<K,V> implements Map.Entry<K,V> {
@@ -113,9 +121,9 @@ static class Node<K,V> implements Map.Entry<K,V> {
     }
 ```
 
-### 确定哈希桶数组索引位置——hash(Object key)
+### 确定哈希桶数组索引位置—— hash(Object key)
 
-本质上就三部：**取key的hashCode值、高位运算、取模运算**。
+本质上就三部：**取 key 的 hashCode 值、高位运算、取模运算**。
 
 ```java
 方法一：
@@ -131,25 +139,15 @@ static int indexFor(int h, int length) {
 //jdk1.7的源码，jdk1.8没有这个方法，但是实现原理一样的
     return h & (length-1);  //第三步 取模运算
 }
-
 ```
 
-只要它的hashCode()返回值相同，那么程序调用方法一所计算得到的Hash码值总是相同的。
+只要它的 hashCode() 返回值相同，那么程序调用方法一所计算得到的 Hash 码值总是相同的。
 
 
 
 ###  put(K key, V value)
 
->JDK1.7
->
->当我们往HashMap 中put 元素的时候，先根据key 的hashCode 重新计算hash 值，根据hash 值得到这个元素在数组中的位置（即下标），如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，**新加入的放在链头**，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。
->
->
-
-当我们往HashMap 中put 元素的时候，先根据key 的
-hashCode 重新计算hash 值，根据hash 值得到这个元素在数组中的位置（即下标），如
-果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新
-加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到
+>当我们往 HashMap 中 put 元素的时候，先根据 key 的 hashCode  重新计算 hash 值，根据 hash 值得到这个元素在数组中的位置（即下标），如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，**新加入的放在链头（1.8 以前）**，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。
 
 ```java
 // 添加一个元素
@@ -269,7 +267,7 @@ public V remove(Object key) {
 
 ### 扩容机制resize
 
-当元素个数 > 数组大小 （默认16）* 负载因子（默认0.75f）时开始扩容，即默认情况下元素个数大于12个时，数组大小扩为2 * 16 = 32，即扩大一倍，然后重新计算每个元素在数组中的位置，，而这是一个非常消耗性能的操作，所以如果我们已经预知HashMap 中元素的个数，那么预设元素的个数能够有效的提高HashMap 的性能。
+当元素个数 > 数组大小 （默认 16 ）* 负载因子（默认 0.75f ）时开始扩容，即默认情况下元素个数大于 12 个时，数组大小扩为 2 * 16 = 32，即扩大一倍，然后重新计算每个元素在数组中的位置，而这是一个非常消耗性能的操作，所以如果我们已经预知 HashMap 中元素的个数，那么预设元素的个数能够有效的提高 HashMap 的性能。
 
 **使用一个新的数组代替已有的容量小的数组**
 
@@ -279,11 +277,11 @@ public V remove(Object key) {
 
 ### 总结
 
-1. 扩容是一个特别耗性能的操作，所以当程序员在使用HashMap的时候，估算map的大小，初始化的时候给一个大致的数值，避免map进行频繁的扩容。
+1. 扩容是一个特别耗性能的操作，所以当程序员在使用 HashMap 的时候，估算 map 的大小，初始化的时候给一个大致的数值，避免 map 进行频繁的扩容。
 2. 负载因子是可以修改的，也可以大于1，但是建议不要轻易修改，除非情况非常特殊。
-3. HashMap是线程不安全的，不要在并发的环境中同时操作HashMap，建议使用ConcurrentHashMap。
-4. JDK1.8引入红黑树大程度优化了HashMap的性能
-5. 使用可变对象做Key会造成value找不到的情况，所以使用`String`，`Integer`等不可变类型用作Key。
+3. HashMap 是线程不安全的，不要在并发的环境中同时操作 HashMap，建议使用 ConcurrentHashMap。
+4. JDK1.8 引入红黑树大程度优化了 HashMap 的性能。
+5. 使用可变对象做 Key 会造成 value 找不到的情况，所以使用`String`，`Integer`等不可变类型用作 Key。
 
 
 
@@ -294,3 +292,4 @@ public V remove(Object key) {
 - [疫苗：Java HashMap的死循环](https://coolshell.cn/articles/9606.html)
 
   ​
+
