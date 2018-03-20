@@ -14,13 +14,13 @@ HashMap 是数组 + 链表 + 红黑树（**JDK1.8 增加了红黑树部分**）�
 
 
 
-### **HashMap 的工作原理：**
+### HashMap 的工作原理
 
 HashMap 基于 **hashing** 原理，当我们往 HashMap 中 put 元素时，先根据 key 的 hash 值得到这个 Entry 元素在数组中的位置（即下标），然后把这个 Entry 元素放到对应的位置中，如果这个 Entry 元素所在的位子上已经存放有其他元素就在同一个位子上的 Entry 元素**以链表**的形式存放，新加入的放在链头( ***JDK 1.8 以前碰撞节点会在链表头部插入，而 JDK 1.8 开始碰撞节点会在链表尾部插入，对于扩容操作后的节点转移 JDK 1.8 以前转移前后链表顺序会倒置，而 JDK 1.8 中依然保持原序***。)，从 HashMap 中 get  Entry 元素时先计算 key 的 hashcode，找到数组中对应位置的某一 Entry 元素，然后通过 key 的 equals 方法在对应位置的链表中找到需要的 Entry 元素，所以 HashMap 的数据结构是数组和链表的结合，此外 HashMap 中 key 和 value 都允许为 null，key 为 null 的键值对永远都放在以 table[0] 为头结点的链表中。 HashMap 在每个链表节点中储存键值对对象。
 
 
 
-### **当两个不同的键对象的hashcode相同时会发生什么？**
+### 当两个不同的键对象的hashcode相同时会发生什么
 
 它们会储存在同一个bucket位置的链表中。键对象的equals()方法用来找到键值对。
 
