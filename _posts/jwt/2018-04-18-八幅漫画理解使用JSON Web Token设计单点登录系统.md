@@ -28,7 +28,7 @@ keywords: jwt, 单点登录
 
 ![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/3.png)
 
-应用将JWT字符串作为该请求Cookie的一部分返回给用户。注意，在这里必须使用 `HttpOnly`属性来防止Cookie被JavaScript读取，从而避免跨站脚本攻击（XSS攻击）。
+应用将JWT字符串作为该请求Cookie的一部分返回给用户。注意，在这里必须使用 `HttpOnly`属性来防止Cookie被JavaScript读取，从而避免[跨站脚本攻击（XSS攻击）](http://www.cnblogs.com/bangerlee/archive/2013/04/06/3002142.html)。
 
 ![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/4.png)
 
@@ -56,7 +56,7 @@ keywords: jwt, 单点登录
 
 Session方式存储用户id的最大弊病在于要占用大量服务器内存，对于较大型应用而言可能还要保存许多的状态。一般而言，大型应用还需要借助一些KV数据库和一系列缓存机制来实现Session的存储。
 
-而JWT方式将用户状态分散到了客户端中，可以明显减轻服务端的内存压力。除了用户id之外，还可以存储其他的和用户相关的信息，例如该用户是否是管理员、用户所在的分桶（见[《你所应该知道的A/B测试基础》一文](/2015/08/27/introduction-to-ab-testing/）等。
+而JWT方式将用户状态分散到了客户端中，可以明显减轻服务端的内存压力。除了用户id之外，还可以存储其他的和用户相关的信息，例如该用户是否是管理员、用户所在的分桶（见[《你所应该知道的A/B测试基础》一文](http://blog.leapoahead.com/2015/08/27/introduction-to-ab-testing/）等。
 
 虽说JWT方式让服务器有一些计算压力（例如加密、编码和解码），但是这些压力相比磁盘I/O而言或许是半斤八两。具体是否采用，需要在不同场景下用数据说话。
 
