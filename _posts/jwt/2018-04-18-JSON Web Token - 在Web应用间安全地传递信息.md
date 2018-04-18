@@ -2,7 +2,7 @@
 layout: post
 title: JSON Web Token - 在Web应用间安全地传递信息
 categories: jwt
-description: jwt 说明
+description: jwt 说明一
 keywords: jwt
 ---
 
@@ -16,7 +16,7 @@ https://your.awesome-app.com/make-friend/?from_user=B&target_user=A
 
 上面的URL主要通过URL来描述这个当然这样做有一个弊端，那就是要求用户B用户是一定要先登录的。可不可以简化这个流程，让B用户不用登录就可以完成这个操作。JWT就允许我们做到这点。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3wdcFic0IXfMGicKbGxlFdKA3mFBic4QIPH9wSABp1Evnbuae0hBzItq9Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![]((https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/640.webp)
 
 ### JWT的组成
 
@@ -88,7 +88,7 @@ rSWamyAYwuHCo7IFAgd1oRpSP7nzL7BF5t7ItqpKViM
 
 这一部分又叫做**签名**。
 
-![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/sign.webp)
 
 最后将这一部分签名也拼接在被签名的字符串后面，我们就得到了完整的JWT
 
@@ -117,7 +117,7 @@ https://your.awesome-app.com/make-friend/?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni
 
 所以，如果有人对头部以及载荷的内容解码之后进行修改，再进行编码的话，那么新的头部和载荷的签名和之前的签名就将是不一样的。而且，如果不知道服务器加密的时候用的密钥的话，得出来的签名也一定会是不一样的。
 
-![](data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/1.webp)
 
 服务器应用在接受到JWT后，会首先对头部和载荷的内容用同一算法再次签名。那么服务器应用是怎么知道我们用的是哪一种算法呢？别忘了，我们在JWT的头部中已经用 `alg`字段指明了我们的加密算法了。
 
@@ -143,4 +143,4 @@ https://your.awesome-app.com/make-friend/?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni
 
 > 本文转自公众号“[程序猿DD](http://mp.weixin.qq.com/s/rLrYsGhnf_iZrMTSDvkqxA##)”，查看更多文章请扫码关注。
 
-![](http://mmbiz.qpic.cn/mmbiz_jpg/R3InYSAIZkHCWVvIZUEa8CQWAStjKkNYbXIicURV5tx4GzRBepUWO9sq8nrkVHwvVylyERaKgQyKvUianyIjelicQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/DD.webp)

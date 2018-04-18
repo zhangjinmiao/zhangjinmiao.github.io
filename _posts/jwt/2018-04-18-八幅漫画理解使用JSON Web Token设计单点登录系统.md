@@ -2,7 +2,7 @@
 layout: post
 title: 八幅漫画理解使用JSON Web Token设计单点登录系统
 categories: jwt
-description: some word here
+description: jwt 说明二
 keywords: jwt, 单点登录
 ---
 
@@ -18,39 +18,39 @@ keywords: jwt, 单点登录
 
 首先，服务器应用（下面简称“应用”）让用户通过Web表单将自己的用户名和密码发送到服务器的接口。这一过程一般是一个HTTP POST请求。建议的方式是通过SSL加密的传输（https协议），从而避免敏感信息被嗅探。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3h7zYJ42Ducb0uBXardiaKHTjXcvGCg65v6QtsKJapWNGsnEkCFZjOXg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/1.png)
 
 接下来，应用和数据库核对用户名和密码。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3Q882CzjZzoZembJrIC6FyFpOH9dCkErnkmwEdsickoaaibaj4kloziaZA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/2.png)
 
 核对用户名和密码成功后，应用将用户的 `id`（图中的 `user_id`）作为JWT Payload的一个属性，将其与头部分别进行Base64编码拼接后签名，形成一个JWT。这里的JWT就是一个形同 `lll.zzz.xxx`的字符串。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3dcImsSEgtDRYU8w1895U6FaafJztdKZLB7ZBfcUIicx5pTuYa1r0gsw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/3.png)
 
 应用将JWT字符串作为该请求Cookie的一部分返回给用户。注意，在这里必须使用 `HttpOnly`属性来防止Cookie被JavaScript读取，从而避免跨站脚本攻击（XSS攻击）。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3ZRKS2hTVbHKia6pbiaRyZKVZoWMFBP39Wz7QKibY4mB2Up0VWrpudvtVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/4.png)
 
 在Cookie失效或者被删除前，用户每次访问应用，应用都会接受到含有 `jwt`的Cookie。从而应用就可以将JWT从请求中提取出来。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3xgW2NbIIrXd2XCUYIlIOybWdq2WsAguEicF2DBjtwz3p6rEfIDGtHlA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/5.png)
 
 应用通过一系列任务检查JWT的有效性。例如，检查签名是否正确；检查Token是否过期；检查Token的接收方是否是自己（可选）。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3ia05TmGkgoIT38dhyyh7YUPadckWGmgXibEfTHbdicZFIUvJvDnseBJCQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/6.png)
 
 应用在确认JWT有效之后，JWT进行Base64解码（可能在上一步中已经完成），然后在Payload中读取用户的id值，也就是 `user_id`属性。这里用户的 `id`为1025。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3pH5vVXmncpVicmVgGmlUicyUJ3HxIiavLV1yCrZbpKIg9SYM3mBr4ic4Og/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/7.png)
 
 应用从数据库取到 `id`为1025的用户的信息，加载到内存中，进行ORM之类的一系列底层逻辑初始化。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3ibSicxm6DKt8hKjRovFz9FCxLILFw9kMqPBZhqHtjFwnaopbrqk76uJA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/8.png)
 
 应用根据用户请求进行响应。
 
-![](http://mmbiz.qpic.cn/mmbiz_png/R3InYSAIZkFIS2iaHPClk0eZ2wKcGTZV3BWPMXrlmFhojoaLKYdIpBQzyL4UueoxIgx2daSdACl1hXxRSm1QtYQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/9.png)
 
 ### 和Session方式存储id的差异
 
