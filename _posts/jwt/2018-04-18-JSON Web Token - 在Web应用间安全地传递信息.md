@@ -16,7 +16,7 @@ https://your.awesome-app.com/make-friend/?from_user=B&target_user=A
 
 上面的URL主要通过URL来描述这个当然这样做有一个弊端，那就是要求用户B用户是一定要先登录的。可不可以简化这个流程，让B用户不用登录就可以完成这个操作。JWT就允许我们做到这点。
 
-![]((https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/640.webp)
+![](https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/assets/images/2018/jwt/640.webp)
 
 ### JWT的组成
 
