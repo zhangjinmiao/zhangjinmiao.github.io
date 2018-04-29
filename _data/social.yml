@@ -1,16 +1,27 @@
+- 微信：javazjm
+
+- QQ：1539745948
+
+- 邮箱：itzhangjm@gmail.com
+
 - sitename: GitHub
   name: zhangjinmiao
   url: https://github.com/zhangjinmiao
   
  
+- sitename: 博客
+  name: CPU一直转
+  url: http://zhangjinmiao.github.io
+  
+  
 - sitename: segmentfault
   name: 火炎焱
   url: https://segmentfault.com/u/itzhangjm
 
 
 - sitename: 简书
-  name: 山川尽美
-  url: http://gold.xitu.io/user/570ddaeb2e958a005c63b2da
+  name: CPU不停转
+  url: https://www.jianshu.com/users/5919bdd22e6e/timeline
 
 
 - sitename: CSDN
@@ -26,33 +37,4 @@
 - sitename: 博客园
   name: 山川尽美
   url: http://www.cnblogs.com/itzjm
-  
-  
-- sitename: 掘金
-  name: JimZhang
-  url: https://juejin.im/user/57c40c9d2e958a00698126b9
 
-  
-- sitename: 开发者头条
-  name: 山川尽美
-  url: https://toutiao.io/u/131097/subjects
-  
-  
-- sitename: 知乎
-  name: 张晋苗
-  url: https://www.zhihu.com/people/zhang-jin-miao-75/activities
-
-  
-- sitename: 博客
-  name: CPU一直转
-  url: http://zhangjinmiao.github.io
-
-  
-- sitename: 微博
-  name: 山川尽美
-  url: https://weibo.com/u/2261073983
-
-
-- sitename: 豆瓣
-  name: jimzhang
-  url: https://www.douban.com/people/itzjm
