@@ -1,17 +1,19 @@
-- name: 工作相关
+- name: Software Engineer Keywords
   keywords:
       - Java
-      - Spring
-	  - Spring Cloud
-      - Mybatis
-	  - MySQL
-	  - Redis
-	  - RabbitMQ
-	  - Linux
+      - C++
+      - Python
+      - Design Patterns
 
-- name: 生活
+- name: Mobile Developer Keywords
   keywords:
-      - 看书
-      - 看电影 纪录片
-	  - 写字
-	  - 听音乐
+      - Android
+      - Reverse Engineering
+
+- name: Windows Developer Keywords
+  keywords:
+      - Win32 SDK
+      - DuiLib
+      - WTL
+      - COM
+      - WinDbg
