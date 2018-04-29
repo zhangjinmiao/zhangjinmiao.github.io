@@ -2,8 +2,8 @@
   keywords:
       - Java
       - Spring
-      - Spring Boot
-	  - Spring Cloud
+      - SpringBoot
+	  - SpringCloud
 	  - Dubbo
 	  - Mybatis
 	  - MySQL
