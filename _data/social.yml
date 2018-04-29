@@ -1,8 +1,15 @@
-- 微信：javazjm
+- sitename: 微信
+  name: javazjm
+  url:
+ 
+ 
+- sitename: QQ
+  name: 1539745948
+  url:
 
-- QQ：1539745948
-
-- 邮箱：itzhangjm@gmail.com
+  
+- sitename: 邮箱
+  name: itzhangjm@gmail.com
 
 - sitename: GitHub
   name: zhangjinmiao
