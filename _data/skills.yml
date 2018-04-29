@@ -1,19 +1,20 @@
 - name: Software Engineer Keywords
   keywords:
       - Java
-      - C++
-      - Python
+      - Spring
+      - Spring Boot
+	  - Spring Cloud
+	  - Dubbo
+	  - Mybatis
+	  - MySQL
+	  - Redis
+	  - RabbitMQ
+	  - Linux
       - Design Patterns
 
-- name: Mobile Developer Keywords
+- name: Life Keywords
   keywords:
-      - Android
-      - Reverse Engineering
-
-- name: Windows Developer Keywords
-  keywords:
-      - Win32 SDK
-      - DuiLib
-      - WTL
-      - COM
-      - WinDbg
+      - 看书
+      - 听音乐
+	  - 写字
+	  - 旅游
