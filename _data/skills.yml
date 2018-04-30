@@ -2,15 +2,7 @@
   keywords:
       - Java
       - Spring
-      - SpringBoot
-	  - SpringCloud
-	  - Dubbo
-	  - Mybatis
-	  - MySQL
-	  - Redis
-	  - RabbitMQ
-	  - Linux
-      - Design Patterns
+      - Spring Boot
 
 - name: Life Keywords
   keywords:
