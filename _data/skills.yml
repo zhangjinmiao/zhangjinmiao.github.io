@@ -1,12 +1,12 @@
-- name: Software Engineer Keywords
+- name: Professional skill Keywords
   keywords:
       - Java
-      - Spring
-      - Spring Boot
+      - MySQL
+      - Linux
+      - Design Patterns
 
 - name: Life Keywords
   keywords:
-      - 看书
-      - 听音乐
-	  - 写字
-	  - 旅游
+      - Listen to music
+      - Reading a book
+	  - Tourism
