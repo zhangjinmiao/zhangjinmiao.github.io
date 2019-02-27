@@ -9,9 +9,9 @@ PING www.a.shifen.com (180.97.33.108) 56(84) bytes of data.
 64 bytes from 180.97.33.108: icmp_seq=4 ttl=48 time=27.6 ms
 
 telnet 域名/IP 端口号
->zhx_gateway@10-10-80-30:~$ telnet applesale.zihexin.com.cn 9094
-Trying 106.37.176.100...
-Connected to applesale.zihexin.com.cn.
+>test_user@10-10-80-30:~$ ttelnet www.baidu.com 80
+Trying 61.135.169.125...
+Connected to www.a.shifen.com.
 Escape character is '^]'.
 
 hosts 加入域名
@@ -61,7 +61,7 @@ tar.gz格式
 
 ##传包
 
->scp Alipay.jar zihexin@10.6.4.154:/home/zihexin/servers/paymentzhx/alipay
+>scp Alipay.jar 用户名@127.0.0.1:/usr/work/alipay
 
 ##拷贝
 从其他目录拷贝文件到当前目录：
