@@ -73,7 +73,7 @@ tar.gz格式
 或
 ps -ef | grep java
 (grep ——global search regular expression(RE) and print out the line 全文正则匹配并打印)
-```
+```txt
 ps：将某个进程显示出来
 
 -A 　显示所有程序。 
