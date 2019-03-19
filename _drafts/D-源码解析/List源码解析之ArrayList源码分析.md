@@ -1,8 +1,18 @@
-### ArrayList简介 
+---
+layout: post
+title: List 源码解析之 ArrayList 源码分析
+categories: [SourceCode]
+description: ArrayList 源码分析
+keywords: List, ArrayList, 源码
+---
 
-ArrayList是基于数组实现的， 是一个动态扩展的数组，容量可自动增长。
-ArrayList是非线程安全的，只能在单线程环境下使用，多线程环境考虑使用Collections.synchronizedList(List<T> list)函数返回一个线程安全的ArrayList类，也可以使用concurrent并发包下的CopyOnWriteArrayList类。
-ArrayList实现了Serializable接口，因此它支持序列化，能够通过序列化传输，实现了RandomAccess接口，支持快速随机访问，实际上就是通过下标序号进行快速访问，实现了Cloneable接口，能被克隆。
+注：文中源码为 JDK 1.8 。
+
+### ArrayList 简介 
+
+ArrayList 是基于数组实现的， 是一个动态扩展的数组，容量可自动增长。
+ArrayList 是非线程安全的，只能在单线程环境下使用，多线程环境考虑使用 Collections.synchronizedList(List<T> list) 函数返回一个线程安全的 ArrayList 类，也可以使用 concurrent 并发包下的 CopyOnWriteArrayList 类。 
+ArrayList 实现了 Serializable 接口，因此它支持序列化，能够通过序列化传输，实现了 RandomAccess 接口，支持快速随机访问，实际上就是通过下标序号进行快速访问，实现了 Cloneable 接口，能被克隆。
 
 ### 属性和构造函数
 
@@ -288,7 +298,7 @@ private void fastRemove(int index) {
 
 ### 容量调整
 
-如果添加元素前已经预测到了容量不足，可手动增加ArrayList实例的容量，以减少递增式再分配的数量。
+如果添加元素前已经预测到了容量不足，可手动增加 ArrayList 实例的容量，以减少递增式再分配的数量。
 
 #### ensureCapacity(int minCapacity)
 
@@ -309,7 +319,7 @@ public void ensureCapacity(int minCapacity) {
 // 具体查看ensureExplicitCapacity
 ```
 
-在ensureExplicitCapacity中，可以看出，每次扩容时，会将老数组中的元素重新拷贝一份到新的数组中（***System.arraycopy()方法***），每次数组容量的增长大约是其原容量的1.5 倍。这种操作的代价是很高的，因此要尽量避免数组容量扩容，使用时尽可能的指定容量，或者根据需求，通过调用ensureCapacity 方法来手动增加ArrayList 实例的容量。
+在 ensureExplicitCapacity 中，可以看出，每次扩容时，会将老数组中的元素重新拷贝一份到新的数组中（***System.arraycopy()方法***），每次数组容量的增长大约是其原容量的 1.5 倍。这种操作的代价是很高的，因此要尽量避免数组容量扩容，使用时尽可能的指定容量，或者根据需求，通过调用 ensureCapacity 方法来手动增加 ArrayList 实例的容量。
 
 #### trimToSize()
 
@@ -356,7 +366,7 @@ public void trimToSize() {
 >
 > 
 
-#### ForEach循环遍历
+#### ForEach 循环遍历
 
 > ```java
 > Integer value = null;
@@ -367,9 +377,9 @@ public void trimToSize() {
 
 
 
-经测试，耗时：ForEach循环  > 随机 > 迭代器，优先使用迭代器方式 。
+经测试，耗时：ForEach 循环  > 随机 > 迭代器，优先使用迭代器方式 。
 
-ForEach的本质也是迭代器模式，可以反编译查看，而且还多了一步赋值操作，增加了开销。
+ForEach 的本质也是迭代器模式，可以反编译查看，而且还多了一步赋值操作，增加了开销。
 
 
 
@@ -377,7 +387,7 @@ ForEach的本质也是迭代器模式，可以反编译查看，而且还多了�
 
 size(), isEmpty(), get(), set()方法均能在常数时间内完成，add()方法的时间开销跟插入位置有关，addAll()方法的时间开销跟添加元素的个数成正比。其余方法大都是线性时间。
 
-- 排列有序（索引从0开始），可插入空值，可重复
+- 排列有序（索引从 0 开始），可插入空值，可重复
 
 - 底层数组实现
 
@@ -385,10 +395,10 @@ size(), isEmpty(), get(), set()方法均能在常数时间内完成，add()方�
 
 - 非同步，线程不安全
 
-- 初始容量默认为10，当容量不够时，ArrayList是当前容量 * 1.5 + 1
-扩容时，需要调用System.arraycopy，copy本来就是一个耗时的操作，所以尽量初始化容量。
+- 初始容量默认为 10，当容量不够时，ArrayList 是当前容量 * 1.5 + 1 
+扩容时，需要调用 System.arraycopy，copy 本来就是一个耗时的操作，所以尽量初始化容量。
 即使理论上效率还可以
-（System.arraycopy()方法是一个native的，最终调用了C语言的memmove()函数，比一般的复制方法的实现效率要高很多。）
+（System.arraycopy() 方法是一个 native 的，最终调用了 C 语言的 memmove() 函数，比一般的复制方法的实现效率要高很多。）
 
 - 创建时，初始化最小容量
 
@@ -399,9 +409,4 @@ size(), isEmpty(), get(), set()方法均能在常数时间内完成，add()方�
 >- [CarpenterLee](https://github.com/CarpenterLee/JCFInternals/blob/master/markdown/2-ArrayList.md)
 >- [莫等闲](http://zhangshixi.iteye.com/blog/674856)
 >- [兰亭风雨](http://blog.csdn.net/mmc_maodun)
-
-======华丽丽的分隔线======
-作者：jimzhang
-出处：http://www.jianshu.com/p/2f282e5ce305
-版权所有，欢迎保留原文链接进行转载：)
 
