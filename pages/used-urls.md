@@ -1,0 +1,152 @@
+---
+layout: page
+title: 优秀网站
+description: 收集一些优秀的网站以便方便访问
+keywords: github,手册,汇总,项目,工具,网址
+comments: true
+menu: 网址
+permalink: /used-urls/
+---
+
+把平时看到的好的网址收集到一块，使用时便于查找，以下内容持续更新，欢迎推荐。
+
+## 文档类
+- [技术文档中文版](http://doczh.cn/)
+- [StuQ 程序员技能图谱](https://github.com/TeamStuQ/skill-map)
+- [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
+- [free-programming-books](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
+- [Interview-Notebook-技术面试需要掌握的基础知识整理](https://github.com/CyC2018/Interview-Notebook)
+- [Nginx 中文文档](https://github.com/DocsHome/nginx-docs)
+- [tutorials-国外牛人维护的很全](https://github.com/eugenp/tutorials)
+
+## 书籍
+
+- [《微服务：从设计到部署》中文版](http://oopsguy.com/books/microservices/index.html)
+- [《英语进阶指南》](https://byoungd.gitbook.io/english-level-up-tips/)
+
+
+
+## 支付版块
+
+- [凤凰牌老熊](http://doc.cocolian.org/)
+
+
+
+## 源码阅读
+
+- [Spring](https://github.com/seaswalker/Spring)
+
+## 工具类
+- [流程图手绘网站](https://jeasonstudio.github.io/oxygen-demo/)
+- [线程快照信息分析平台](https://fastthread.io/)
+- [OOMdump文件分析平台](https://heaphero.io/index.jsp)
+- [压力测试工具 siege](http://download.joedog.org/siege/) 
+  - [使用参考](https://www.jianshu.com/p/74c465ff136f)
+
+## 手册类
+
+### Linux
+- [linux命令行手册](https://github.com/jaywcjlove/linux-command)
+- [Linux命令大全](http://man.linuxde.net)
+- [浏览器模拟linux](https://bellard.org/jslinux/)
+- [快乐的 Linux 命令行](https://github.com/billie66/TLCL)
+- [LINUX大棚](http://roclinux.cn/)
+- [我使用过的Linux命令系列总目录](http://codingstandards.iteye.com/blog/1112967)
+- [Java 程序员眼中的 Linux](https://youmeek.gitbooks.io/linux-tutorial/content/)
+
+
+### Redis
+
+- [官方网站](http://redis.io/)
+- [Redis中国用户组](http://www.redis.cn/)
+- [Redis中文网](http://www.redis.net.cn/)
+- [Redis 命令参考](http://doc.redisfans.com/)
+
+
+### MySQL
+
+- [MySQL入门教程](https://github.com/jaywcjlove/mysql-tutorial)
+
+### Git 
+- [Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
+
+
+
+
+## 项目类
+
+### SpringBoot
+#### 教程 demo
+- [springboot 脚手架](https://github.com/lihengming/spring-boot-api-project-seed)
+- [spring-boot 项目实践总结-各种例子](https://github.com/timebusker/spring-boot)
+
+
+- [SpringBootUnity](https://gitee.com/hupeng/SpringBootUnity)
+- [纯洁的微笑](http://www.ityouknow.com/spring-boot)
+- [DD](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
+- [嘟嘟独立博客](http://tengj.top/categories/Spring-Boot%E5%B9%B2%E8%B4%A7%E7%B3%BB%E5%88%97/)
+- [梁桂钊](http://blog.720ui.com/columns/springboot_all/)
+
+#### 后台管理项目
+- [BootDo](https://github.com/lcg0124/bootdo)
+- [基于SpringBoot,更简洁的后台管理系统 Guns](http://git.oschina.net/naan1993/guns)
+- [iBase4J-SpringBoot](https://gitee.com/iBase4J/iBase4J-SpringBoot)
+- [hsweb企业后台管理系统基础框架](http://www.hsweb.me/)
+- [人人开源](http://www.renren.io/open/)
+- [SpringBootAdmin 微服务快速开发脚手架](http://demo.geekcattle.cc/)
+- [springboot-hadmin](https://github.com/zhengyunfei/springboot-hadmin/blob/master/README.md)
+- [前后端分离的基础权限管理后台](https://github.com/oukingtim/king-admin)
+- [轻量级销售团队管理](https://gitee.com/yupeng957/PowerTeam)
+
+#### 博客项目
+- [响应式开源个人博客foblog](https://github.com/abel533/foblog)
+- [cms 系统，mybatis-guice集成通用Mapper](http://git.oschina.net/free/easycms/tree/master)
+- [通用Mapper和分页插件脚手架Guns](http://git.oschina.net/free/guns)
+- [jcalaBlog](http://git.oschina.net/lynabo/jcalaBlog)
+
+#### 支付项目
+- [小柒支付整合项目](http://git.oschina.net/52itstyle/spring-boot-pay)
+- [xxpay](http://www.xxpay.org/)
+- [龙果支付](https://gitee.com/roncoocom/roncoo-pay)
+- [best-pay-sdk](https://github.com/Pay-Group/best-pay-sdk)
+- [Jigsaw Payment开源支付项目](http://jigsaw.lixf.cn/)
+- [xpay](https://gitee.com/Exrick/xpay)
+
+#### 规则引擎
+- [springBoot-drools](https://github.com/licc168/springBoot-drools)
+
+### SpringCloud 
+- [纯洁的微笑](http://www.ityouknow.com/spring-cloud.html)
+- [汇总](http://www.ityouknow.com/springcloud/2016/12/30/springcloud-collect.html)
+- [方志朋](http://blog.csdn.net/column/details/15197.html?&page=2)
+- [DD](http://blog.didispace.com/Spring-Cloud%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
+- [wangkang80](https://www.oschina.net/p/udf-sample?fromerr=uaCNBmYN)
+- [尹吉欢](http://cxytiandi.com/blog/detail/17470)
+- [easy-cloud](https://github.com/dqeasycloud/easy-cloud)
+- [Spring-Cloud-AG-Admin](https://github.com/wxiaoqi/Spring-Cloud-AG-Admin)
+
+
+### 通用工具
+- [hutool](http://www.hutool.cn/)
+
+### 接口管理工具
+- [JApiDocs](https://github.com/YeDaxia/JApiDocs)
+- [阿里妈妈出品：RAP](https://github.com/thx/RAP)
+- [Mock.js](http://mockjs.com/)
+  [作者博客](http://nuysoft.com/)
+- [网易出品：NEI接口管理平台](https://nei.netease.com/)
+- [swagger的改版](https://github.com/battcn/spring-boot-starter-swagger/)
+
+
+### 运维工具
+- [useful-scripts：脚本集淘宝oldratlee](https://github.com/oldratlee/useful-scripts)
+
+### 阿里巴巴
+- [druid-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter)
+
+### 其他
+- [SpringBatch读取txt文件](https://yiqiwuliao.com/post/spring/springbatchdu-qu-txtwen-jian-bing-xie-ru-shu-ju-ku)
+- [美女爬虫](https://my.oschina.net/z707z/blog/829662)
+- [各种Java示例项目Java Examples](https://github.com/JavaExamples)
+
+

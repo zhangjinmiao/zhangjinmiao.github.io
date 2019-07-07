@@ -45,6 +45,10 @@ navs:
   -
     href: /open-source/
     label: 开源
+
+  -
+    href: /used-urls/
+    label: 网址
     
   -
     href: /about/
