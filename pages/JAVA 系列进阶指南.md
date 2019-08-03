@@ -1,11 +1,13 @@
 ---
-layout: post
+layout: page
 title: JAVA 系列进阶指南
-categories: Blog
-description: 学习计划
-keywords: 系列进阶,面试
+description: 循序渐进的学习每个知识点，并做记录
+keywords: 进阶,提高
+comments: true
+permalink: /todo.html
 ---
 
+按规划学习。
 
 ## JAVA 基础
 

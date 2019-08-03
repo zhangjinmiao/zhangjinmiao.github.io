@@ -5,7 +5,7 @@ description: 若水三千只取一瓢饮
 keywords: Zhang jinmiao, jimzhang, 山川尽美, 火炎焱
 comments: true
 menu: 关于
-permalink: /about/
+permalink: /about.html
 ---
 
 ## 关于博客

@@ -6,11 +6,17 @@ url: http://zhangjinmiao.github.io
 date_format: "ordinal"
 title: 山川尽美
 subtitle: "脚踏实地，勇往直前"
-description: "张晋苗的个人博客"
-keywords: Java, zjm, jimzhang, itzjm
+description: "本站是山川尽美的技术分享驿站，内容涉及Java后端技术：JVM、Spring Boot、Spring Cloud、高并发、多线程、微服务、架构设计、中间件使用等技术知识；还包括日常生活感悟、理财知识等"
+keywords: Java,zjm,imzhang,itzjm,山川尽美,Spring,Spring Boot,Spring Cloud,Go
 timezone: Asia/Shanghai
 encoding: "utf-8"
+favicon: favicon.ico 
 side_bar_repo_limit: 5
+
+repository: zhangjinmiao/zhangjinmiao.github.io
+github_url: https://github.com/zhangjinmiao
+#url: http://www.mminn.xyz
+##enforce_ssl: mminn.xyz
 
 # ---------------- #
 #      Author      #
@@ -23,8 +29,57 @@ location: Beijing, China
 email: itzhangjm@gmail.com
 
 # ---------------- #
+#      Jekyll      #
+# ---------------- #
+# Build settings
+markdown: kramdown
+kramdown:
+    input: GFM
+    enable_coderay: true
+highlighter: rouge
+
+source:      .
+destination: ./_site
+
+defaults: []
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+#permalink: /:year/:month/:day/:title/
+permalink: /:categories/:year/:month/:day/:title:output_ext
+gems:
+    - jekyll-github-metadata
+    - rouge
+    - kramdown
+    #- jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-geo-pattern
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+    - Jekyll-tagging
+#     - jekyll-mentions
+collections:
+    wiki:
+        output: true
+        permalink: /wiki/:path/
+
+paginate: 10
+paginate_path: 'page:num'
+
+# ---------------- #
 #    Navigation    #
 # ---------------- #
+# Navigation. top menu list
+menus:
+
+  -
+    href: /zsxq.html
+    label: 星球
+    target: _self
+
+
+# Navigation. main menu list    
 navs:
   -
     href: /
@@ -49,43 +104,39 @@ navs:
   -
     href: /used-urls/
     label: 网址
-    
+  
   -
-    href: /about/
+    href: /todo.html
+    label: TODO
+    target: _blank
+
+  -
+    href: /about.html
     label: 关于
+
+# labels. my blog key words
+labels:
+
+  -
+    href: /payment.html
+    label: 支付
+    target: _self
+
+# selected articles
+classes:
+
+  -
+    href: /life.html
+    name: 我的故事
+    describe: 生活就是故事，故事就是生活
 
 # ---------------- #
 #       RSS        #
 # ---------------- #
 subscribe_rss: /feed.xml
 
-# ---------------- #
-#      Jekyll      #
-# ---------------- #
-markdown: kramdown
-kramdown:
-    input: GFM
-highlighter: rouge
-paginate: 8
-lsi: false
-quiet: false
-excerpt_separator: "\n\n"
-permalink: /:year/:month/:day/:title/
-gems:
-    - jekyll-github-metadata
-    - rouge
-#     - jekyll-html-pipeline
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
-#     - jekyll-mentions
-collections:
-    wiki:
-        output: true
-        permalink: /wiki/:path/
-
-repository: zhangjinmiao/zhangjinmiao.github.io
+# Sidebar to show popular repo
+side_bar_repo_limit: 6 # Number of repos to show
 
 # ---------------- #
 #      Comments    #
@@ -125,5 +176,5 @@ simple_jekyll_search:
 # ---------------- #
 #    Analytics     #
 # ---------------- #
-google:
-    analytics_id: UA-80669434-1
+#google:
+    #analytics_id: UA-80669434-1
