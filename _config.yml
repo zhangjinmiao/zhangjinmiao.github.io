@@ -135,7 +135,7 @@ classes:
 subscribe_rss: /feed.xml
 
 # Sidebar to show popular repo
-side_bar_repo_limit: 6 # Number of repos to show
+side_bar_repo_limit: 4 # Number of repos to show
 
 # ---------------- #
 #      Comments    #
