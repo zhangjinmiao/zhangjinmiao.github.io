@@ -11,7 +11,6 @@ keywords: Java,zjm,imzhang,itzjm,山川尽美,Spring,Spring Boot,Spring Cloud,Go
 timezone: Asia/Shanghai
 encoding: "utf-8"
 favicon: favicon.ico 
-side_bar_repo_limit: 5
 
 repository: zhangjinmiao/zhangjinmiao.github.io
 github_url: https://github.com/zhangjinmiao
@@ -64,7 +63,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-paginate: 10
+paginate: 8
 paginate_path: 'page:num'
 
 # ---------------- #
