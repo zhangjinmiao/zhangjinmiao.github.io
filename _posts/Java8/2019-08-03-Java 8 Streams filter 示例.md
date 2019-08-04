@@ -156,3 +156,6 @@ public static void main(String[] args) {
   }
 ````
 
+>源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
+
+系列文章详见：[Java 8 教程](http://zhangjinmiao.github.io/java8/2019/07/27/Java-8-Tutorials.html)

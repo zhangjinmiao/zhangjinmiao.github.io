@@ -11,7 +11,7 @@ keywords: Java 8, 系列
 **目录：**
 1. [Lambda 表达式示例](http://zhangjinmiao.github.io/java8/2019/08/01/Java-8-Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%AF%94%E8%BE%83%E5%99%A8%E4%BD%BF%E7%94%A8.html)
 2. [forEach 示例](http://zhangjinmiao.github.io/java8/2019/08/02/Java8-forEach-%E4%BD%BF%E7%94%A8.html)
-3. [Streams filter 示例]()
+3. [Streams filter 示例](http://zhangjinmiao.github.io/java8/2019/08/03/Java-8-Streams-filter-%E7%A4%BA%E4%BE%8B.html)
 4. [Streams map() 示例]()
 5. [使用 Streams 进行集合分组]()
 
