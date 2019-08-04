@@ -22,7 +22,6 @@ keywords: Java 8, 系列, lambda, sort
 ````java
 	Comparator<Developer> byName = 
 		(Developer o1, Developer o2)->o1.getName().compareTo(o2.getName());
-
 ````
 
 ## 1.没有 Lambda 的排序
@@ -139,6 +138,7 @@ public class TestSorting {
 	//lambda, valid, parameter type is optional
 	listDevs.sort((o1, o2)->o1.getAge()-o2.getAge());
 ````
+
 ### 2. 按名字排序
 ````java
 	//sort by name
@@ -156,6 +156,7 @@ public class TestSorting {
 	listDevs.sort((o1, o2)->o1.getName().compareTo(o2.getName()));		
 
 ````
+
 ### 3. 按薪水排序
 ````java
 	//sort by salary
@@ -175,6 +176,7 @@ public class TestSorting {
 ````
 ### 4. 反向排序
 1. 薪水正序排序
+
 ````java
 Comparator<Developer> salaryComparator = (o1, o2)->o1.getSalary().compareTo(o2.getSalary());
 	listDevs.sort(salaryComparator);
@@ -187,11 +189,14 @@ Developer{name='wangwu', salary=9000, age=24}
 Developer{name='maliu', salary=10000, age=25}
 ````
 2.反向排序
+
 ````java
 Comparator<Developer> salaryComparator = (o1, o2)->o1.getSalary().compareTo(o2.getSalary());
 	listDevs.sort(salaryComparator.reversed());
 ````
+
 输出：
+
 ````java
 Developer{name='maliu', salary=10000, age=25}
 Developer{name='wangwu', salary=9000, age=24}
@@ -200,3 +205,5 @@ Developer{name='zhangsan', salary=7000, age=22}
 ````
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
+
+系列文章详见：[Java 8 教程](http://zhangjinmiao.github.io/java8/2019/07/27/Java-8-Tutorials.html)
