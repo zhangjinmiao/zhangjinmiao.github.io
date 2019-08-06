@@ -8,9 +8,10 @@ keywords: Java 8, 系列, streams Collectors,group by, count, sum
 ## 引言
 在本文中，我们将向您展示如何使用 java8 流的 Collectors 对列表进行分组、计数、求和和排序。
 
-
 ## 1. 分组、计数和排序
+
 1. 按列表分组并显示列表的总数。
+
 ````java
  List<String> items = Arrays.asList("apple", "apple", "banana",
         "apple", "orange", "banana", "papaya");
@@ -22,6 +23,7 @@ Map<String, Long> result = items.stream()
 ````
 
 输出：
+
 ````java
 {
 	papaya=1, orange=1, banana=2, apple=3
@@ -29,6 +31,7 @@ Map<String, Long> result = items.stream()
 ````
 
 2. 添加排序
+
 ````java
 List<String> items = Arrays.asList("apple", "apple", "banana",
         "apple", "orange", "banana", "papaya");
@@ -43,7 +46,9 @@ Map<String, Long> result = items.stream()
 
     System.out.println(finalMap);
 ````
+
 输出：
+
 ````java
 {
 	apple=3, banana=2, papaya=1, orange=1
@@ -52,6 +57,7 @@ Map<String, Long> result = items.stream()
 ````
 
 ## 2.列出对象
+
 按用户定义的对象列表进行“分组”的示例。
 
 1. 按名称分组，并统计数量或求和。
@@ -65,9 +71,8 @@ public class Item {
 
     //constructors, getter/setters 
 }
-Copy
-
 ````
+
 ````java
 List<Item> items = Arrays.asList(
         new Item("apple", 10, new BigDecimal("9.99")),
@@ -92,12 +97,15 @@ List<Item> items = Arrays.asList(
 
     System.out.println(sum);
 ````
+
 输出：
+
 ````java
 {papaya=1, banana=2, apple=3, orang=1, watermelon=1}
 ======
 {papaya=20, banana=30, apple=40, orang=10, watermelon=10}
 ````
+
 2. 按价格分组，Collectors.groupingBy and Collectors.mapping 的使用：
 
 ````java
@@ -128,6 +136,7 @@ System.out.println("=====>group by price:");
 ````
 
 输出：
+
 ````java
 =====>group by price:
 {   19.99=[
@@ -150,7 +159,6 @@ System.out.println("=====>group by price:");
     29.99=[orang, watermelon], 
     9.99=[papaya, apple]
 }
-
 ````
 
 
