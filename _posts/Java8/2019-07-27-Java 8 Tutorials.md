@@ -14,5 +14,5 @@ keywords: Java 8, 系列
 3. [Streams filter 示例](http://zhangjinmiao.github.io/java8/2019/08/03/Java-8-Streams-filter-%E7%A4%BA%E4%BE%8B.html)
 4. [Streams map() 示例](http://zhangjinmiao.github.io/java8/2019/08/04/Java-8-Streams-map-%E4%BD%BF%E7%94%A8.html)
 5. [使用 Streams 进行集合分组](http://zhangjinmiao.github.io/java8/2019/08/05/Java-8-Stream-Collectors-%E5%88%86%E7%BB%84-%E7%BB%9F%E8%AE%A1%E7%AD%89%E6%93%8D%E4%BD%9C.html)
-
+6. [过滤一个来自流的空值](http://zhangjinmiao.github.io/java8/2019/08/06/Java-8-Stream-%E8%BF%87%E6%BB%A4%E7%A9%BA%E5%80%BC.html)
 
