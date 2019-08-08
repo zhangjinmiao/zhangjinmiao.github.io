@@ -121,11 +121,12 @@ public static<T> Stream<T> of(T t) {
 }
 ````
 
-## Which one
+### Which one
 - 对于对象数组，两者都调用相同的 `Arrays.stream` 方法
 - 对于基本数组，我更喜欢 `Arrays.stream`，因为它返回固定的大小 `IntStream`，更容易操作。
 
 所以，推荐使用 `Arrays.stream`，不需要考虑是对象数组还是基本数组，直接返回对应的流对象，操作方便。
+
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
 
