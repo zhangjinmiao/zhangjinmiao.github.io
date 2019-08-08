@@ -15,5 +15,6 @@ keywords: Java 8, 系列
 4. [Streams map() 示例](http://zhangjinmiao.github.io/java8/2019/08/04/Java-8-Streams-map-%E4%BD%BF%E7%94%A8.html)
 5. [使用 Streams 进行集合分组](http://zhangjinmiao.github.io/java8/2019/08/05/Java-8-Stream-Collectors-%E5%88%86%E7%BB%84-%E7%BB%9F%E8%AE%A1%E7%AD%89%E6%93%8D%E4%BD%9C.html)
 6. [过滤一个来自流的空值](http://zhangjinmiao.github.io/java8/2019/08/06/Java-8-Stream-%E8%BF%87%E6%BB%A4%E7%A9%BA%E5%80%BC.html)
-7. [将数据流转换为列表]()
-8. [如何将 Array 转换为 Stream]()
+7. [将数据流转换为列表](http://zhangjinmiao.github.io/java8/2019/08/07/Java-8-%E5%B0%86%E6%95%B0%E6%8D%AE%E6%B5%81%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%88%97%E8%A1%A8.html)
+8. [如何将 Array 转换为 Stream](http://zhangjinmiao.github.io/java8/2019/08/08/Java-8-%E5%A6%82%E4%BD%95%E5%B0%86-Array-%E8%BD%AC%E6%8D%A2%E4%B8%BA-Stream.html)
+9. [Stream 已经被操作或关闭]()
