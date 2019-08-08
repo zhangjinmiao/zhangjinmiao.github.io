@@ -3,7 +3,7 @@ layout: post
 title: Java8 Streams 过滤 null
 categories: Java8
 description: Java 8 教程系列解读
-keywords: Java 8, 系列, streams Collectors,group by, count, sum
+keywords: Java 8, 系列, streams, filter 
 ---
 
 ## 引言
