@@ -114,6 +114,7 @@ permalink: /todo.html
 1. [《秒杀案例》](https://blog.52itstyle.vip/archives/2853/) ——先看
 2. [《如何设计一个秒杀系统》](https://time.geekbang.org/column/127)
 3. [《Java秒杀系统方案优化 高性能高并发实战-本地》](/Users/zhangjinmiao/Video/100、Java秒杀系统方案优化 高性能高并发实战)进行中
+4. [miaosha](https://github.com/qiurunze123/miaosha)——全
 
 ### 架构
 
@@ -216,6 +217,7 @@ fast-boot
 - [Java 工程师进阶知识完全扫盲♥️♥️](https://github.com/doocs/advanced-java)
 - [JavaGuide](https://github.com/Snailclimb/JavaGuide) ♥️♥️
 - [CS-Notes](https://github.com/CyC2018/CS-Notes)♥️
+- [fullstack tutorial](https://frank-lam.github.io/fullstack-tutorial/)
 
 # GO
 
