@@ -19,3 +19,7 @@ keywords: Java 8, 系列
 8. [如何将 Array 转换为 Stream](http://zhangjinmiao.github.io/java8/2019/08/08/Java-8-%E5%A6%82%E4%BD%95%E5%B0%86-Array-%E8%BD%AC%E6%8D%A2%E4%B8%BA-Stream.html)
 9. [Stream 已经被操作或关闭](http://zhangjinmiao.github.io/java8/2019/08/09/Java-8-Stream-%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%93%8D%E4%BD%9C%E6%88%96%E5%85%B3%E9%97%AD.html)
 10. [对 Map 排序](http://zhangjinmiao.github.io/java8/2019/08/10/Java-8-%E5%AF%B9-Map-%E6%8E%92%E5%BA%8F.html)
+11. [将 list 转为 map]()
+12. [对 map 过滤]()
+13. [将 map 转为 list]()
+14. []()
