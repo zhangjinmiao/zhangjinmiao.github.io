@@ -161,3 +161,6 @@ result1：{aws.amazon.com=200000, digitalocean.com=120000, linode.com=100000, li
 
 在上面的例子中，流是在收集之前排序的，所以“ linode. com 100000”变成了“ oldValue”。
 
+>源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
+
+系列文章详见：[Java 8 教程](http://zhangjinmiao.github.io/java8/2019/07/27/Java-8-Tutorials.html)
