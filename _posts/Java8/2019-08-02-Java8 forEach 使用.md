@@ -14,7 +14,7 @@ keywords: Java 8, 系列, forEach
 
 1. 普通方式遍历 Map
 
-````java
+```java
 	Map<String, Integer> items = new HashMap<>();
 	items.put("A", 10);
 	items.put("B", 20);
@@ -26,11 +26,11 @@ keywords: Java 8, 系列, forEach
 	for (Map.Entry<String, Integer> entry : items.entrySet()) {
 		System.out.println("Item : " + entry.getKey() + " Count : " + entry.getValue());
 	}
-````
+```
 2. 
 在 java8 中，可以使用 forEach + lambda 表达式循环 Map。
 
-````java
+```java
 	Map<String, Integer> items = new HashMap<>();
 	items.put("A", 10);
 	items.put("B", 20);
@@ -47,14 +47,14 @@ keywords: Java 8, 系列, forEach
 			System.out.println("Hello E");
 		}
 	});
-````
+```
 
 
 ## 2. forEach and List
 
 1. 普通方式遍历 List
 
-````java
+```java
 List<String> items = new ArrayList<>();
 	items.add("A");
 	items.add("B");
@@ -65,12 +65,12 @@ List<String> items = new ArrayList<>();
 	for(String item : items){
 		System.out.println(item);
 	}
-````
+```
 
 2.
 在 java8 中，可以使用 forEach + lambda 表达式或方法引用循环 List。
 
-````java
+```java
 	List<String> items = new ArrayList<>();
 	items.add("A");
 	items.add("B");
@@ -98,7 +98,7 @@ List<String> items = new ArrayList<>();
 	items.stream()
 		.filter(s->s.contains("B"))
 		.forEach(System.out::println);
-````
+```
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
 

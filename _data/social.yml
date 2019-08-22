@@ -14,38 +14,45 @@
 - sitename: GitHub
   name: zhangjinmiao
   url: https://github.com/zhangjinmiao
-  
+  target: _blank
  
 - sitename: 博客
   name: CPU一直转
   url: http://zhangjinmiao.github.io
+  target: _blank
   
 - sitename: v2ex
   name: itzjm
   url: http://www.v2ex.com/?r=itzjm
+  target: _blank
   
   
 - sitename: segmentfault
   name: 火炎焱
   url: https://segmentfault.com/u/itzhangjm
+  target: _blank
 
 
 - sitename: 简书
   name: CPU不停转
   url: https://www.jianshu.com/users/5919bdd22e6e/timeline
+  target: _blank
 
 
 - sitename: CSDN
   name: 山川尽美
   url: http://blog.csdn.net/u014639186
+  target: _blank
 
 
 - sitename: 开源中国
   name: 山川尽美
   url: https://my.oschina.net/zjm528el  
+  target: _blank
 
   
 - sitename: 博客园
   name: 山川尽美
   url: http://www.cnblogs.com/itzjm
+  target: _blank
 
