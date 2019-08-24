@@ -10,7 +10,7 @@ keywords: Java 8, 系列, streams map
 
 ## 1. 将 List 中的字符串转为大写
 
-````java
+```java
 public static void main(String[] args) {
     List<String> alpha = Arrays.asList("a", "b", "c", "d");
 
@@ -32,12 +32,12 @@ public static void main(String[] args) {
     List<Integer> collect1 = num.stream().map(n -> n * 2).collect(Collectors.toList());
     System.out.println(collect1); //[2, 4, 6, 8, 10]
   }
-````
+```
 
 ## 2. 将 List 中的对象转为字符串
 
 
-````java
+```java
 public class Developer {
 
 
@@ -50,10 +50,10 @@ public class Developer {
   //...
 
 }
-````
+```
 
 
-````java
+```java
 public static void main(String[] args) {
     List<Developer> persons = Arrays.asList(
         new Developer("zhangsan", 20),
@@ -72,12 +72,12 @@ public static void main(String[] args) {
     List<String> collect = persons.stream().map(x -> x.getName()).collect(Collectors.toList());
     System.out.println(collect); // [zhangsan, lisi, wangwu]
   }
-````
+```
 
 
 ## 3. 将 List 中的对象转为另一个对象
 
-````java
+```java
 public class Person {
 
   private String name;
@@ -87,11 +87,11 @@ public class Person {
   //...
 
 }
-````
+```
 
 1. Java 8 之前：
 
-````java
+```java
 List<Developer> developers = Arrays.asList(
         new Developer("zhangsan", 20),
         new Developer("lisi",21),
@@ -113,11 +113,11 @@ List<Person> result = new ArrayList<>();
 
     System.out.println(JSONUtil.toJsonStr(result));
   }
-````
+```
 
 2. java 8
 
-````java
+```java
 List<Developer> developers = Arrays.asList(
         new Developer("zhangsan", 20),
         new Developer("lisi",21),
@@ -135,7 +135,7 @@ List<Person> result = developers.stream().map(temp -> {
     }).collect(Collectors.toList());
 
     System.out.println(JSONUtil.toJsonStr(result));        
-````
+```
 
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)

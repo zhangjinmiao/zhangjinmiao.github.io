@@ -31,7 +31,7 @@ Stream（流）是一个来自数据源的元素队列并支持聚合操作
 ## 1. Streams filter() and collect()
 1.java 8 之前过滤 list 使用如下方式：
 
-````java
+```java
 List<String> lines = Arrays.asList("spring", "node", "php");
 
     List<String> result = getFilterOutput(lines, "php");
@@ -49,11 +49,11 @@ List<String> lines = Arrays.asList("spring", "node", "php");
     }
     return result;
   }
-````
+```
 
 2.java 8 之后，使用 stream.filter() 过滤 list，使用 collect() 将流转为 list.
 
-````java 
+```java 
 List<String> lines = Arrays.asList("spring", "node", "php");
 
     List<String> result = lines.stream()          // convert list to stream
@@ -61,13 +61,13 @@ List<String> lines = Arrays.asList("spring", "node", "php");
         .collect(Collectors.toList());            // collect the output and convert streams to a List
 
     result.forEach(System.out::println);          //output : spring, node
-````
+```
 
 
 ## 2. Streams filter(), findAny() and orElse()
 java8 之前，获取 name 通过如下方式：
 
-````java
+```java
 public static void main(String[] args) {
     List<Developer> persons = Arrays.asList(
         new Developer("zhangsan", 20),
@@ -88,11 +88,11 @@ private static Developer getByNameBefore(List<Developer> persons, String lisi) {
 
     return result;
   }
-````
+```
 
 java8 之后：
 
-````java
+```java
 public static void main(String[] args) {
     List<Developer> persons = Arrays.asList(
         new Developer("zhangsan", 20),
@@ -108,10 +108,10 @@ public static void main(String[] args) {
         .orElse(null);
     System.out.println(developer1);
 }
-````
+```
 多条件查询使用：
 
-````java
+```java
 public static void main(String[] args) {
     List<Developer> persons = Arrays.asList(
         new Developer("zhangsan", 20),
@@ -133,10 +133,10 @@ public static void main(String[] args) {
     System.out.println(result2);
 
   }
-````
+```
 ## 3. Streams filter() and map()
 
-````java
+```java
 public static void main(String[] args) {
     List<Developer> persons = Arrays.asList(
         new Developer("zhangsan", 20),
@@ -154,7 +154,7 @@ public static void main(String[] args) {
 
     collect.forEach(System.out::println);
   }
-````
+```
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
 
