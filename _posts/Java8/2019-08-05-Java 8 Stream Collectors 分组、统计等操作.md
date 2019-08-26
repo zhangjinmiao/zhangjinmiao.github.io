@@ -12,7 +12,7 @@ keywords: Java 8, 系列, streams Collectors,group by, count, sum
 
 1. 按列表分组并显示列表的总数。
 
-````java
+```java
  List<String> items = Arrays.asList("apple", "apple", "banana",
         "apple", "orange", "banana", "papaya");
 
@@ -20,19 +20,19 @@ Map<String, Long> result = items.stream()
         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
     System.out.println(result);
-````
+```
 
 输出：
 
-````java
+```java
 {
 	papaya=1, orange=1, banana=2, apple=3
 }
-````
+```
 
 2. 添加排序
 
-````java
+```java
 List<String> items = Arrays.asList("apple", "apple", "banana",
         "apple", "orange", "banana", "papaya");
 
@@ -45,16 +45,16 @@ Map<String, Long> result = items.stream()
         .sorted(Entry.<String,Long>comparingByValue().reversed()).forEachOrdered(e->finalMap.put(e.getKey(),e.getValue()));
 
     System.out.println(finalMap);
-````
+```
 
 输出：
 
-````java
+```java
 {
 	apple=3, banana=2, papaya=1, orange=1
 }
 
-````
+```
 
 ## 2.列出对象
 
@@ -62,7 +62,7 @@ Map<String, Long> result = items.stream()
 
 1. 按名称分组，并统计数量或求和。
 
-````java
+```java
 public class Item {
 
     private String name;
@@ -71,9 +71,9 @@ public class Item {
 
     //constructors, getter/setters 
 }
-````
+```
 
-````java
+```java
 List<Item> items = Arrays.asList(
         new Item("apple", 10, new BigDecimal("9.99")),
         new Item("banana", 20, new BigDecimal("19.99")),
@@ -96,19 +96,19 @@ List<Item> items = Arrays.asList(
         .collect(Collectors.groupingBy(Item::getName, Collectors.summingInt(Item::getQty)));
 
     System.out.println(sum);
-````
+```
 
 输出：
 
-````java
+```java
 {papaya=1, banana=2, apple=3, orang=1, watermelon=1}
 ======
 {papaya=20, banana=30, apple=40, orang=10, watermelon=10}
-````
+```
 
 2. 按价格分组，Collectors.groupingBy and Collectors.mapping 的使用：
 
-````java
+```java
  List<Item> items = Arrays.asList(
         new Item("apple", 10, new BigDecimal("9.99")),
         new Item("banana", 20, new BigDecimal("19.99")),
@@ -133,11 +133,11 @@ System.out.println("=====>group by price:");
     System.out.println("=====>group by + mapping to Set:");
     System.out.println(collect);
 
-````
+```
 
 输出：
 
-````java
+```java
 =====>group by price:
 {   19.99=[
         Item{name='banana', qty=20, price=19.99}, 
@@ -159,7 +159,7 @@ System.out.println("=====>group by price:");
     29.99=[orang, watermelon], 
     9.99=[papaya, apple]
 }
-````
+```
 
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
