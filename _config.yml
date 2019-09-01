@@ -110,9 +110,9 @@ navs:
     target: _blank
 
   -
-  href: /money.html
-  label: 挣钱
-  target: _blank
+    href: /money.html
+    label: 挣钱
+    target: _blank
 
   -
     href: /about.html
