@@ -12,7 +12,7 @@ keywords: Java 8, 系列, streams, filter
 
 1. 检查包含空值的流。
 
-````java
+```java
 public static void main(String[] args) {
 
     Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
@@ -22,11 +22,11 @@ public static void main(String[] args) {
     result.forEach(System.out::println);
 
     }
-````
+```
 
 输出：
 
-````java
+```java
 java
 python
 node
@@ -34,11 +34,11 @@ null   // <--- NULL
 ruby
 null   // <--- NULL
 php
-````
+```
 
 2. 使用 Stream.filter (x-x! null) 
 
-````java
+```java
 public static void main(String[] args) {
 
     Stream<String> language = Stream.of("java", "python", "node", null, "ruby", null, "php");
@@ -52,17 +52,17 @@ public static void main(String[] args) {
 
         result.forEach(System.out::println);
     }
-````
+```
 
 输出：
 
-````java
+```java
 java
 python
 node
 ruby
 php
-````
+```
 
 >源码见：[java-8-demo](https://github.com/zhangjinmiao/java-8-demo)
 

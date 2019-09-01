@@ -14,7 +14,7 @@ keywords: Java 8, 系列, array convert stream
 
 对于对象数组，Arrays.stream 和 Stream.of 都返回相同的输出。
 
-````java
+```java
 public static void main(String[] args) {
 
     ObjectArrays();
@@ -32,10 +32,10 @@ public static void main(String[] args) {
     Stream<String> stream1 = Stream.of(array);
     stream1.forEach(x-> System.out.println(x));
   }
-````
+```
 输出：
 
-````java
+```java
 a
 b
 c
@@ -47,11 +47,11 @@ b
 c
 d
 e
-````
+```
 
 查看 JDK 源码，对于对象数组，`Stream.of` 内部调用了 `Arrays.stream` 方法。
 
-````java
+```java
 // Arrays
 public static <T> Stream<T> stream(T[] array) {
     return stream(array, 0, array.length);
@@ -61,13 +61,13 @@ public static <T> Stream<T> stream(T[] array) {
 public static<T> Stream<T> of(T... values) {
     return Arrays.stream(values);
 }
-````
+```
 
 ## 2. 基本数组 
 
 对于基本数组，Arrays.stream 和 Stream.of 将返回不同的输出。
 
-````java
+```java
 public static void main(String[] args) {
 
     PrimitiveArrays();
@@ -90,10 +90,10 @@ private static void PrimitiveArrays() {
     intStream.forEach(x-> System.out.println(x));
 
   }
-````
+```
 输出：
 
-````java
+```java
 1
 2
 3
@@ -105,11 +105,11 @@ private static void PrimitiveArrays() {
 3
 4
 5
-````
+```
 
 查看源码，
 
-````java
+```java
 // Arrays
 public static IntStream stream(int[] array) {
     return stream(array, 0, array.length);
@@ -119,7 +119,7 @@ public static IntStream stream(int[] array) {
 public static<T> Stream<T> of(T t) {
     return StreamSupport.stream(new Streams.StreamBuilderImpl<>(t), false);
 }
-````
+```
 
 ### Which one
 - 对于对象数组，两者都调用相同的 `Arrays.stream` 方法

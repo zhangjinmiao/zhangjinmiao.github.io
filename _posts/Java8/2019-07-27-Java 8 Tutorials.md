@@ -20,8 +20,8 @@ keywords: Java 8, 系列
 9. [Stream 已经被操作或关闭](http://zhangjinmiao.github.io/java8/2019/08/09/Java-8-Stream-%E5%B7%B2%E7%BB%8F%E8%A2%AB%E6%93%8D%E4%BD%9C%E6%88%96%E5%85%B3%E9%97%AD.html)
 10. [对 Map 排序](http://zhangjinmiao.github.io/java8/2019/08/10/Java-8-%E5%AF%B9-Map-%E6%8E%92%E5%BA%8F.html)
 11. [将 list 转为 map](http://www.mminn.xyz/java8/2019/08/11/Java-8-%E5%B0%86-list-%E8%BD%AC%E4%B8%BA-map.html)
-12. [对 map 过滤]()
-13. [Java 8 flatMap 示例]()
+12. [对 map 过滤](http://www.mminn.xyz/java8/2019/08/12/Java-8-%E5%AF%B9-map-%E8%BF%87%E6%BB%A4.html)
+13. [Java 8 flatMap 示例](http://www.mminn.xyz/java8/2019/08/13/Java-8-%E5%B0%86flatMap-%E7%A4%BA%E4%BE%8B.html)
 14. [将 map 转为 list]()
-15.
+15. []()
 

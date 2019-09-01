@@ -1,16 +1,38 @@
 <body class="{{ page.class }}" data-mz="{{ page.class }}">
-<header class="site-header">
-  <div class="container">
-    <h1><a href="{{ site.url }}/" title="{{ site.title }}"><span class="octicon octicon-mark-github"></span> {{ site.title }}</a></h1>
-    <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <nav class="site-header-nav" role="navigation">
-      {% for nav in site.navs %}
-      <a href="{{ site.url }}{{ nav.href }}" class="{% if page.menu == nav.label %} selected {% endif %} site-header-nav-item" target="{{ nav.target | default: _self }}" title="{{ nav.label }}">{{ nav.label }}</a>
-      {% endfor %}
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="{{ site.url }}/" title="{{ site.title }}"><span class="octicon octicon-mark-github"></span>
+          {{ site.title }}</a></h1>
+      <button class="collapsed mobile-visible" type="button" onclick="toggleMenu();">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <nav class="site-header-nav" role="navigation">
+
+        {% for nav in site.navs %}
+        <a href="{{ site.url }}{{ nav.href }}"
+          class="{% if page.menu == nav.label %} selected {% endif %} site-header-nav-item"
+          target="{{ nav.target | default: _self }}" title="{{ nav.label }}">{{ nav.label }}</a>
+        {% endfor %}
+
+        <!--
+        {% for nav in site.navs %}
+        <div class="{% if page.menu == nav.label %} selected {% endif %} site-header-nav-item hvr-underline-from-center">
+          <a href="{{ nav.href }}" target="{{ nav.target | default: _self }}" title="{{ nav.label }}">
+            {{ nav.label }}
+          </a>
+          {% if nav.subnav %}
+          <ul class="submenu">
+            {% for subItem in nav.subnav %}
+            <li><a href="{{ subItem.subHref }}"
+                target="{{ subItem.target | default: _self }}">{{ subItem.subLabel }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+        -->
+      </nav>
+    </div>
+  </header>
