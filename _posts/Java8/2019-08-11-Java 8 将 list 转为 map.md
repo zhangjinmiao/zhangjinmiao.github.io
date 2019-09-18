@@ -8,7 +8,7 @@ keywords: Java 8, 系列, list, map
 ## 引言
 
 创建一个对象类
-````java
+```java
 public class Hosting {
 
     private int Id;
@@ -24,12 +24,12 @@ public class Hosting {
     //getters, setters and toString()
 }
 
-````
+```
 
 ## 1.List to Map – Collectors.toMap()
 创建 Hosting 对象的列表，并使用 Collectors.toMap 将其转换为 Map。
 
-````java
+```java
 public static void testOne(){
     List<Hosting> list = new ArrayList<>();
     list.add(new Hosting(1, "liquidweb.com", 80000));
@@ -56,12 +56,12 @@ public static void testOne(){
 
     System.out.println("result3：" + result3);
   }
-````
+```
 
 ## 2.List to Map – Duplicated Key
 重复的 key 抛出异常。
 
-````java
+```java
 private static void testTwo() {
     List<Hosting> list = new ArrayList<>();
     list.add(new Hosting(1, "liquidweb.com", 80000));
@@ -77,20 +77,20 @@ private static void testTwo() {
 
     System.out.println("result1：" + result1);
   }
-````
+```
 
 输出——下面的错误消息有点误导人，它应该显示“ linode”而不是键的值。
 
-````java
+```java
 Exception in thread "main" java.lang.IllegalStateException: Duplicate key 90000
 	at java.util.stream.Collectors.lambda$throwingMerger$0(Collectors.java:133)
 	at java.util.HashMap.merge(HashMap.java:1245)
 	//...
-````
+```
 
 要解决上面重复的关键问题，传入第三个 mergeFunction 参数，如下所示:
 
-````java
+```java
 private static void testTwo() {
 
     List<Hosting> list = new ArrayList<>();
@@ -110,32 +110,32 @@ private static void testTwo() {
 
     System.out.println("result1：" + result1);
   }
-````
+```
 
 输出：
-````java
+```java
 result1：{liquidweb.com=80000, mkyong.com=1, digitalocean.com=120000, aws.amazon.com=200000, linode.com=90000}
-````
+```
 
 使用新值：
-````java
+```java
 Map<String, Long> result1 = list.stream().collect(
                 Collectors.toMap(Hosting::getName, Hosting::getWebsites,
-                        (oldValue, newValue) -> newvalue
+                        (oldValue, newValue) -> newValue
                 )
         );
 
-````
+```
 
 输出：
-````java
+```java
 result1：{liquidweb.com=80000, mkyong.com=1, digitalocean.com=120000, aws.amazon.com=200000, linode.com=100000}
-````
+```
 
 ## 3.List to Map – Sort & Collect
 
 先排序再收集。
-````java
+```java
 private static void testThree() {
     List<Hosting> list = new ArrayList<>();
     list.add(new Hosting(1, "liquidweb.com", 80000));
@@ -152,12 +152,12 @@ private static void testThree() {
 
     System.out.println("result1：" + result1);
   }
-````
+```
 
 输出：
-````java
+```java
 result1：{aws.amazon.com=200000, digitalocean.com=120000, linode.com=100000, liquidweb.com=80000, mkyong.com=1}
-````
+```
 
 在上面的例子中，流是在收集之前排序的，所以“ linode. com 100000”变成了“ oldValue”。
 

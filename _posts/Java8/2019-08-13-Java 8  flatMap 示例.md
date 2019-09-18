@@ -32,7 +32,7 @@ Flatmap ()是如何工作的:
 ## 1.Stream + String [] + flatMap
 下面的示例将打印一个空结果，因为 filter ()不知道如何过滤 String []流。
 
-````java
+```java
 private static void one() {
  
 
@@ -43,11 +43,11 @@ private static void one() {
     Stream<String[]> stream = temp.filter(x -> "a".equals(x.toString()));
     stream.forEach(System.out::println);
   }
-````
+```
 
 在上面的例子中，我们应该使用 flatMap ()将流字符串[]转换为流字符串。
 
-````java
+```java
 private static void one() {
 
     //Stream<String[]>
@@ -63,7 +63,7 @@ private static void one() {
     Stream<String> stream1 = stringStream.filter(x -> "a".equals(x.toString()));
     stream1.forEach(System.out::println);
   }
-````
+```
 
 输出：
 ```java
