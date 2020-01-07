@@ -11,7 +11,7 @@ keywords: blog
 >
 Hello，大家好，很高兴与大家见面，从今天开始我将在这里记录我的工作与生活的点滴，希望大家支持！
 >
-现在开始吧[CPU一直转](http://zhangjinmiao.github.io)。
+现在开始吧[CPU 一直转](http://zhangjinmiao.github.io)。
 
 ​																
 
