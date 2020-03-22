@@ -89,10 +89,20 @@ menus:
   -
     href: /used-urls/
     label: 网址
+  
+  -
+    href: /money.html
+    label: 挣钱
+    target: _blank
+
   -
     href: /todo.html
     label: TODO
     target: _blank
+  
+  -
+    href: /links/
+    label: 链接
 
 # Navigation. main menu list    
 navs:
@@ -110,26 +120,12 @@ navs:
     target: _blank
 
   -
-    href: /links/
-    label: 链接
-
-  -
     href: /open-source/
     label: 开源
 
   -
     href: /used-urls/
     label: 网址
-  
-  -
-    href: /todo.html
-    label: TODO
-    target: _blank
-
-  -
-    href: /money.html
-    label: 挣钱
-    target: _blank
 
   -
     href: /about.html
