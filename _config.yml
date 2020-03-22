@@ -72,11 +72,27 @@ paginate_path: 'page:num'
 # Navigation. top menu list
 menus:
 
+  #-
+    #href: /zsxq.html
+    #label: 星球
+    #target: _self
+
   -
-    href: /zsxq.html
-    label: 星球
+    href: /fuli.html
+    label: 福利
     target: _self
 
+  -
+    href: /links/
+    label: 链接
+
+  -
+    href: /used-urls/
+    label: 网址
+  -
+    href: /todo.html
+    label: TODO
+    target: _blank
 
 # Navigation. main menu list    
 navs:
@@ -118,6 +134,8 @@ navs:
   -
     href: /about.html
     label: 关于
+
+
 
 # labels. my blog key words
 labels:
