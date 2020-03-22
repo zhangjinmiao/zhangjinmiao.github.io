@@ -89,8 +89,9 @@ navs:
     label: 分类
 
   -
-    href: /wiki/
-    label: 维基
+    href: /fuli.html
+    label: 福利
+    target: _blank
 
   -
     href: /links/
