@@ -1,98 +1,215 @@
-<footer class="container">
-    <div class="site-footer" role="contentinfo">
-        <div class="copyright left mobile-block">
-            © 2018
-            <span title="{{ site.author}}">{{ site.author }}</span>
-            <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+    <footer class="container">
+
+      {% include footer-ad.html %}
+
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © {{ site.since }}
+                    <span title="{{ site.author}}">{{ site.author }}</span>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="{{ site.github.repository_url }}" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                {% for nav in site.menus %}
+                <li>
+                    <a href="{{ site.url }}{{ nav.href }}" title="{{ nav.label }}" target="{{ nav.target | default: _self }}">{{ nav.label }}</a>
+                </li>
+                {% endfor %}
+                <li><a href="{{ site.url }}{{ site.subscribe_rss }}"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
+            </ul>
+
+
         </div>
 
-        <ul class="site-footer-links right mobile-hidden">
-           <!-- <li>
-                <a style="color:#777" href="http://beian.miit.gov.cn/">晋ICP备19009201号</a>
-            </li>-->
-            <li>
-                <a href="javascript:window.scrollTo(0,0)">TOP</a>
-            </li>
-        </ul>
-
-        <a href="{{ site.github.repository_url }}" target="_blank" aria-label="view source code">
-            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-        </a>
-        <ul class="site-footer-links mobile-hidden">
-            {% for nav in site.menus %}
-            <li>
-                <a href="{{ site.url }}{{ nav.href }}" title="{{ nav.label }}"
-                    target="{{ nav.target | default: _self }}">{{ nav.label }}</a>
-            </li>
-            {% endfor %}
-            <li><a href="{{ site.url }}{{ site.subscribe_rss }}"><span class="octicon octicon-rss"
-                        style="color:orange;"></span></a></li>
-        </ul>
-
-    </div>
-
-    <div class="site-footer" role="contentinfo" style="padding-top:0px;border-top:none;">
-        <div align="center">
-            <a target="_blank" style="color:#777" href="http://beian.miit.gov.cn/">晋ICP备19009201号-1</a>
+        <div class="site-footer" role="contentinfo" style="padding-top:0px;border-top:none;">
+            <div style="text-align:center;">
+                <a target="_blank" style="color:#777" href="http://beian.miit.gov.cn/">晋ICP备19009201号-1</a>
+            </div>
+            <div style="text-align:center">
+                <img src="{{ site.url }}/assets/images/2019/备案图标.png">
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802029536" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802029536号</p></a>
+            </div>
+            {% include visit-stat.html %}
+            
         </div>
-        <div align="center">
-            <img src="{{ site.url }}/assets/images/2019/备案图标.png">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802029536" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802029536号</p></a>
-        </div>
-        <div align="center">
-            <span id="busuanzi_container_site_pv">本站总访问量:<span id="busuanzi_value_site_pv"></span>次,</span>
-            <span id="busuanzi_container_site_uv">您是第<span id="busuanzi_value_site_uv"></span>位访客,</span>
-            <span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-            <span id="htmer_time"></span>
-        </div>
-    </div>
-    <!--<div>
-        	<span id="busuanzi_container_page_pv">
-  				本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-			</span>
-        </div>-->
-</footer>
-<!-- / footer -->
-<script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
-<script src="{{ site.url }}/assets/js/geopattern.js"></script>
-<script src="{{ site.url }}/assets/js/prism.js"></script>
-<link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script>
-    jQuery(document).ready(function ($) {
-        // geopattern
-        $('.geopattern').each(function () {
-            $(this).geopattern($(this).data('pattern-id'));
+    </footer>
+    <!-- <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div> -->
+    <!-- / footer -->
+    {% if site.components.share.enabled %}
+    <script src="{{ assets_base_url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
+    {% endif %}
+    <script src="{{ assets_base_url }}/assets/js/geopattern.js"></script>
+    <script>
+      jQuery(document).ready(function($) {
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
         });
-        // hljs.initHighlightingOnLoad();
+       /* hljs.initHighlightingOnLoad(); */
+      });
+    </script>
+
+    {% if page.mermaid %}
+    <script src="{{ assets_base_url }}/assets/js/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    {% endif %}
+
+    {% if page.sequence %}
+    <script src="{{ assets_base_url }}/assets/js/webfont.js"></script>
+    <script src="{{ assets_base_url }}/assets/js/snap.svg-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
+    <script src="{{ assets_base_url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.js"></script>
+    <link rel="stylesheet" href="{{ assets_base_url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.css">
+    <script>
+      $(".language-sequence").sequenceDiagram({theme: 'simple'});
+    </script>
+    {% endif %}
+
+    {% if page.flow %}
+    <script src="{{ assets_base_url }}/assets/js/raphael.min.js"></script>
+    <script src="{{ assets_base_url }}/assets/vendor/flowchart.js/dist/flowchart.min.js"></script>
+    <script src="{{ assets_base_url }}/assets/js/flow.js"></script>
+    {% endif %}
+
+    {% if page.mathjax %}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    {% endif %}
+
+    {% if page.mindmap %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mzlogin/kityminder-core@dev/dist/kityminder.core.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mzlogin/kity@dev/dist/kity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mzlogin/kityminder-core@dev/dist/kityminder.core.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $('.language-mindmap').each(function(index, element) {
+    var markdownText = element.textContent.trim();
+    var parentNode = element.parentNode.parentNode;
+    var nodeName = '.language-mindmap-' + index;
+    var node = document.createElement("div");
+    node.className = 'language-mindmap-' + index;
+    node.style.height = '' + $(element).height() + 'px';
+    parentNode.insertBefore(node, element.parentNode);
+    var minder = new kityminder.Minder({
+      renderTo: nodeName
     });
-</script>
+    minder.importData('markdown', markdownText);
+    /* minder.disable(); */
+    minder.execCommand('hand');
 
-{% if page.mermaid %}
-<script src="{{ site.url }}/assets/js/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
-{% endif %}
+    var viewerTipNode = document.createElement("a");
+    viewerTipNode.setAttribute('href', '{{ site.url }}/mindmap-viewer/?data=' + encodeURIComponent(markdownText));
+    viewerTipNode.setAttribute('target', '_blank');
+    viewerTipNode.setAttribute('style', 'font-size:0.8rem;font-style:italic;font-color:grey;');
+    viewerTipNode.innerText = '全屏查看';
+    parentNode.insertBefore(viewerTipNode, element.parentNode);
 
-{% if page.sequence %}
-<script src="{{ site.url }}/assets/js/webfont.js"></script>
-<script src="{{ site.url }}/assets/js/snap.svg-min.js"></script>
-<script src="{{ site.url }}/assets/js/underscore-min.js"></script>
-<script src="{{ site.url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.js"></script>
-<link rel="stylesheet" href="{{ site.url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.css">
-<script>
-    $(".language-sequence").sequenceDiagram({ theme: 'simple' });
-</script>
-{% endif %}
+    element.parentNode.style.display = 'none';
 
-{% if page.flow %}
-<script src="{{ site.url }}/assets/js/raphael.min.js"></script>
-<script src="{{ site.url }}/assets/vendor/flowchart.js/dist/flowchart.min.js"></script>
-<script src="{{ site.url }}/assets/js/flow.js"></script>
-{% endif %}
+    {% if page.mindmap-template %}
+    setTimeout(function() {
+      minder.setTemplate('{{ page.mindmap-template }}');
+      minder.refresh();
+    }, 100);
+    {% endif %}
+  });
+});
+    </script>
+    {% endif %}
+{% if page.mindmap2 %}
+    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.1.2/dist/index.min.js"></script>
+    <style>
+        .markmap > svg {
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+    <script>
+        function fullScreen(nodeId) {
+            var element= document.getElementById(nodeId);  
+            if (window.ActiveXObject) {
+                var WsShell = new ActiveXObject('WScript.Shell');
+                WsShell.SendKeys('{F11}');
+            }
+            else if (element.requestFullScreen) {
+                element.requestFullScreen();
+            }
+            else if (element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+            else if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+            }
+            else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            }
+        }
 
-{% if page.mathjax %}
-<script type="text/javascript"
-    src="https://basis-learning.github.io/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        function fullExit() {
+            var element= document.getElementById("ddd");  
+            if (window.ActiveXObject) {
+                var WsShell = new ActiveXObject('WScript.Shell');
+                WsShell.SendKeys('{F11}');
+            }
+            else if (element.requestFullScreen) {
+                document.exitFullscreen();
+            }
+            else if (element.msRequestFullscreen) {
+                document.msExitFullscreen();
+            }
+            else if (element.webkitRequestFullScreen) {
+                document.webkitCancelFullScreen();
+            }
+            else if (element.mozRequestFullScreen) {
+                document.mozCancelFullScreen();
+            }
+        }
+
+        function insertAfter(newElement, targetElement) {
+            var parent = targetElement.parentNode;
+            if (parent.lastChild == targetElement) {
+                parent.appendChild(targetElement);
+            } else {
+                parent.insertBefore(newElement, targetElement.nextSibling);
+            }
+        }
+       
+        $(document).ready(function(){
+            $('.language-mindmap').each(function(index, element) {
+                window.markmap = {
+                    autoLoader: { manual: false },
+                };
+                var markdownText = element.textContent.trim();
+                var parentNode = element.parentNode.parentNode;
+                element.setAttribute('class', "markmap");
+                var nodeName = '.language-mindmap-' + index;
+                element.setAttribute("id", nodeName);
+                var viewerTipNode1 = document.createElement("a");
+                viewerTipNode1.appendChild(document.createTextNode("全屏"));
+                viewerTipNode1.setAttribute('onclick', 'fullScreen("' + nodeName + '")');
+                viewerTipNode1.setAttribute('style', 'font-size:0.8rem;font-style:italic;font-color:grey;');
+                viewerTipNode1.setAttribute('href', 'javascript:void(0)');
+                insertAfter(viewerTipNode1, element.parentNode);
+                var viewerTipNode2 = document.createElement("a");
+                viewerTipNode2.appendChild(document.createTextNode("语法提示"));
+                viewerTipNode2.setAttribute('href', 'https://markmap.js.org/');
+                viewerTipNode2.setAttribute('target', '_blank');
+                viewerTipNode2.setAttribute('style', 'font-size:0.8rem;font-style:italic;font-color:grey;padding-left:0.5rem;');
+                insertAfter(viewerTipNode2, viewerTipNode1);
+            });
+        });
+    </script>
 {% endif %}
 
 {% if site.google.analytics_id %}
@@ -112,46 +229,5 @@
 </div>
 {% endif %}
 
-<script language=JavaScript>
-    function secondToDate(second) {
-        if (!second) {
-            return 0;
-        }
-        var time = new Array(0, 0, 0, 0, 0);
-        if (second >= 365 * 24 * 3600) {
-            time[0] = parseInt(second / (365 * 24 * 3600));
-            second %= 365 * 24 * 3600;
-        }
-        if (second >= 24 * 3600) {
-            time[1] = parseInt(second / (24 * 3600));
-            second %= 24 * 3600;
-        }
-        if (second >= 3600) {
-            time[2] = parseInt(second / 3600);
-            second %= 3600;
-        }
-        if (second >= 60) {
-            time[3] = parseInt(second / 60);
-            second %= 60;
-        }
-        if (second > 0) {
-            time[4] = second;
-        }
-        return time;
-    }
-</script>
-<!-- 动态显示网站运行时间 -->
-<script type="text/javascript" language="javascript">
-    function setTime() {
-        var create_time = Math.round(new Date(Date.UTC(2018, 3, 12, 0, 0, 0)).getTime() / 1000);
-        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
-        currentTime = secondToDate((timestamp - create_time));
-        currentTimeHtml = '默默运行了' + currentTime[0] + '年' + currentTime[1] + '天' + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4] + '秒';
-        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-    }
-    setInterval(setTime, 1000);
-</script>
-
 </body>
-
 </html>

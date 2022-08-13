@@ -30,7 +30,7 @@
     float: none
   }
   .mobile-hidden {
-    display: none
+    display: block
   }
   .mobile-visible {
     display: inline-block
@@ -124,6 +124,10 @@
   }
   .markdown-body h5 {
     font-size: 1em
+  }
+
+  .tools-wrapper {
+    bottom: 1em;
   }
 }
 

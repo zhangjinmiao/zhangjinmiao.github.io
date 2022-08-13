@@ -1,10 +1,10 @@
 // https://github.com/ghiculescu/jekyll-table-of-contents
-// Updated by http://mazhuang.org
+// Updated by https://mazhuang.org
 (function($){
   $.fn.toc = function(options) {
     var defaults = {
       noBackToTopLinks: false,
-      title: '文章目录',
+      title: '目录',
       minimumHeaders: 2,
       headers: 'h1, h2, h3, h4, h5, h6',
       listType: 'ul', // values: [ol|ul]
@@ -20,6 +20,9 @@
     }
 
     var headers = $(settings.headers).filter(function() {
+      if ($(this).parent('blockquote').length > 0) {
+        return false;
+      }
       // get all headers with an ID
       var previousSiblingName = $(this).prev().attr( "name" );
       if (!this.id && previousSiblingName) {

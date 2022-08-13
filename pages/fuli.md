@@ -5,7 +5,7 @@ description: 购物优惠券
 keywords: 福利
 comments: true
 menu: 福利
-permalink: /fuli.html
+permalink: /fuli
 ---
 
 ## 购物福利

@@ -5,7 +5,7 @@ description: 收集一些优秀的网站以便方便访问
 keywords: github,手册,汇总,项目,工具,网址
 comments: true
 menu: 网址
-permalink: /used-urls/
+permalink: /used-urls
 ---
 
 把平时看到的好的网址收集到一块，使用时便于查找，以下内容持续更新，欢迎推荐。

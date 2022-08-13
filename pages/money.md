@@ -5,7 +5,7 @@ description: 程序员挣钱技能收集
 keywords: 挣钱
 comments: true
 menu: 挣钱
-permalink: /money.html
+permalink: /money
 ---
 
 - [知识星球精选站](http://www.zsxq100.com)

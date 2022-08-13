@@ -4,7 +4,7 @@ title: JAVA 系列进阶指南
 description: 循序渐进的学习每个知识点，并做记录
 keywords: 进阶,提高
 comments: true
-permalink: /todo.html
+permalink: /todo
 ---
 
 按规划学习。

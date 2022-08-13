@@ -1,13 +1,15 @@
 ---
 layout: wiki
 title: Markdown
-categories: Markdown
+cate1: Copywriting
+cate2: 
 description: Markdown 常用语法示例。
 keywords: Markdown
 mermaid: true
 sequence: true
 flow: true
 mathjax: true
+mindmap: true
 ---
 
 **目录**
@@ -18,14 +20,14 @@ mathjax: true
 ### 超链接
 
 ```
-[靠谱-ing](http://mazhuang.org)
+[靠谱-ing](https://mazhuang.org)
 
-<http://mazhuang.org>
+<https://mazhuang.org>
 ```
 
-[靠谱-ing](http://mazhuang.org)  
+[靠谱-ing](https://mazhuang.org)  
 
-<http://mazhuang.org>
+<https://mazhuang.org>
 
 ### 列表
 
@@ -56,6 +58,11 @@ mathjax: true
 * 无序列表项 2
 
 * 无序列表项 3
+
+```
+- [x] 任务列表 1
+- [ ] 任务列表 2
+```
 
 - [x] 任务列表 1
 - [ ] 任务列表 2
@@ -135,6 +142,30 @@ print 'Hello, World!'
 
 * [目录](#目录)
 
+### Inline Attribute
+
+Span Inline Attribute 详情参考 <https://kramdown.gettalong.org/syntax.html#span-ials>
+
+Block Inline Attribute 详情参考 <https://kramdown.gettalong.org/syntax.html#block-ials>
+
+给块/元素添加 class、id、内嵌样式等：
+
+```
+![本站favicon](/favicon.ico){:.center}
+
+Hello, *world*{:#world} 
+
+Hello, *world*{: style="color:red"} 
+```
+
+![本站favicon](/favicon.ico){:.center}
+
+Hello, *world*{:#world} 
+
+Hello, *world*{: style="color:red"} 
+
+结合自定义的样式，有些场景比较有用。
+
 ### Emoji
 
 :camel:
@@ -183,5 +214,28 @@ cond(no)->sub1(right)->op1
 When $$(a \ne 0)$$, there are two solutions to $$(ax^2 + bx + c = 0)$$ and they are
 
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+### mindmap
+
+```mindmap
+# topic
+## topic2
+### topic2.1
+### topic2.2
+## topic3
+<!--Note-->
+这是一个备注
+<!--/Note-->
+### topic3.1
+### topic3.2
+#### topic3.2.1
+#### topic3.2.2
+#### topic3.2.3
+#### topic3.2.4
+#### topic3.2.5
+### topic3.4
+### topic3.5
+### topic3.6
+```
 
 [^1]: Here is the footnote 1 definition.

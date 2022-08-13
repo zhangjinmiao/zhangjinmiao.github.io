@@ -11,21 +11,154 @@ keywords: Java,zjm,imzhang,itzjm,山川尽美,Spring,Spring Boot,Spring Cloud,Go
 timezone: Asia/Shanghai
 encoding: "utf-8"
 favicon: favicon.ico 
-
+# 页面左下角显示的年份
+since: 2015
+# 源码仓库
 repository: zhangjinmiao/zhangjinmiao.github.io
 github_url: https://github.com/zhangjinmiao
 #url: http://www.mminn.xyz
 ##enforce_ssl: mminn.xyz
+# 对 css 和 js 资源的 cdn 加速配置
+cdn:
+    jsdelivr:
+        enabled: true
+# 可选组件配置
+components:
+    # 分享
+    # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
+    share:
+        enabled: true
+        hide-platforms: qq,facebook
+    # 不蒜子访问统计
+    busuanzi:
+        enabled: true
+        start_date: 2018-03-12
+    # 开源软件
+    side_bar_repo:
+        enabled: true
+        limit: 3
+    # 文章字数统计
+    word_count:
+        enabled: true
+    # 页面右上角，以及「关于」页面的二维码
+    # 修改图片请替换 assets/images/qrcode.jpg
+    qrcode:
+        enabled: true
+        image_alt: 山川尽美
+    # 维基索引页使用哪种视图，支持 列表（list）/分类（cate）
+    wiki:
+        view: cate
+# 压缩页面内容
+compress_html:
+  clippings: all
+  comments: ["<!--", "-->"]
+# 代码高亮风格，支持的 theme 列表见 https://github.com/mzlogin/rouge-themes
+highlight_theme: monokai
 
 # ---------------- #
 #      Author      #
 # ---------------- #
 author: Zhang jinmiao
-organization: ZRB, Inc.
-organization_url: https://www.zhenrongbao.com/
+organization: 
+organization_url: 
 github_username: zhangjinmiao
 location: Beijing, China
 email: itzhangjm@gmail.com
+
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+# Navigation. main menu list
+navs:
+  -
+    href: /
+    label: 首页
+
+  -
+    href: /categories/
+    label: 分类
+
+  -
+    href: /archives/
+    label: 归档
+
+  -
+    href: /spring-boot.html
+    label: Spring Boot
+    target: _blank
+    subnav:
+
+      -
+        subHref: /spring-boot.html
+        subLabel: Spring Boot
+
+      -
+        subHref: /spring-cloud.html
+        subLabel: Spring Cloud
+
+
+  -
+    href: /payment.html
+    label: 支付
+    target: _blank
+
+  -
+    href: /about.html
+    label: 关于
+
+# Navigation. bottom menu list
+menus:
+
+  #-
+  #  href: /fuli.html
+  #  label: 福利
+  #  target: _blank
+
+  -
+    href: /links.html
+    label: 链接
+    target: _blank
+
+  -
+    href: /used-urls.html
+    label: 网址
+    target: _blank
+
+  -
+    href: /money.html
+    label: 挣钱
+    target: _blank
+
+  -
+    href: /todo.html
+    label: TODO
+    target: _blank
+
+  -
+    href: /open-source.html
+    label: Code
+    target: _blank
+
+# labels. my blog key words
+labels:
+
+# selected articles
+classes:
+
+  -
+    href: /life.html
+    name: 我的故事
+    describe: 生活就是故事，故事就是生活
+  
+  - 
+    href: /yixue.html
+    name: 易学知识
+    describe: 周易，相术，紫薇，玄学
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+#subscribe_rss: /feed.xml
 
 # ---------------- #
 #      Jekyll      #
@@ -63,96 +196,8 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-paginate: 8
+paginate: 10
 paginate_path: 'page:num'
-
-# ---------------- #
-#    Navigation    #
-# ---------------- #
-# Navigation. top menu list
-menus:
-
-  #-
-    #href: /zsxq.html
-    #label: 星球
-    #target: _self
-
-  -
-    href: /fuli.html
-    label: 福利
-    target: _self
-
-  -
-    href: /links/
-    label: 链接
-
-  -
-    href: /used-urls/
-    label: 网址
-  
-  -
-    href: /money.html
-    label: 挣钱
-    target: _blank
-
-  -
-    href: /todo.html
-    label: TODO
-    target: _blank
-  
-  -
-    href: /links/
-    label: 链接
-
-# Navigation. main menu list    
-navs:
-  -
-    href: /
-    label: 首页
-
-  -
-    href: /categories/
-    label: 分类
-
-  -
-    href: /fuli.html
-    label: 福利
-    target: _blank
-
-  -
-    href: /open-source/
-    label: 开源
-
-  -
-    href: /used-urls/
-    label: 网址
-
-  -
-    href: /about.html
-    label: 关于
-
-
-
-# labels. my blog key words
-labels:
-
-  -
-    href: /payment.html
-    label: 支付
-    target: _self
-
-# selected articles
-classes:
-
-  -
-    href: /life.html
-    name: 我的故事
-    describe: 生活就是故事，故事就是生活
-
-# ---------------- #
-#       RSS        #
-# ---------------- #
-#subscribe_rss: /feed.xml
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 4 # Number of repos to show
@@ -160,28 +205,34 @@ side_bar_repo_limit: 4 # Number of repos to show
 # ---------------- #
 #      Comments    #
 # ---------------- #
-# support provider: disqus, gitment, gitalk
-# comments_provider: gitalk
+# support provider: disqus, gitment, gitalk, utterances, beaudar
+comments_provider: gitalk
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
-# https://disqus.com
+# disqus 配置参考：https://disqus.com
 disqus:
-    username: 
-# https://imsun.net/posts/gitment-introduction/
-# gitment:
-    #owner: zhangjinmiao
-    #repo: blog-comments
-    #oauth:
-        #client_id: e5745b9f2c046ee0c357
-        #client_secret: 65a695b992dc36811f6cf752593994ffbb1316c6
-# https://github.com/gitalk/gitalk#install
-#gitalk:
-    #owner: zhangjinmiao
-    #repo: blog-comments
-    #clientID: e5745b9f2c046ee0c357
-    #clientSecret: 65a695b992dc36811f6cf752593994ffbb1316c6
+    username:
+# gitment 配置参考：https://imsun.net/posts/gitment-introduction/
+gitment:
+    owner: zhangjinmiao
+    repo: blog-comments
+    oauth:
+        client_id: e5745b9f2c046ee0c357
+        client_secret: 65a695b992dc36811f6cf752593994ffbb1316c6
+# gitalk 配置参考：https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: zhangjinmiao
+    repo: blog-comments
+    clientID: e5745b9f2c046ee0c357
+    clientSecret: 65a695b992dc36811f6cf752593994ffbb1316c6
+# utterances 配置参考：https://utteranc.es/
+utterances:
+  repo: mzlogin/blog-comments
+# beaudar 配置参考：https://beaudar.lipk.org/
+beaudar:
+  repo: mzlogin/blog-comments
 # 在使用其它评论组件时可点击显示 Disqus
-#lazy_load_disqus : true
+lazy_load_disqus : false
 
 # ---------------- #
 #      Search      #
@@ -192,8 +243,16 @@ simple_jekyll_search:
     # 最多显示多少条搜索结果
     limit: 10
 
+
 # ---------------- #
-#    Analytics     #
+#      Google      #
 # ---------------- #
 #google:
-    #analytics_id: UA-80669434-1
+  #analytics_id: UA-80669434-1
+  #adsense:
+    #footer: true
+    #sidebar: true
+    #sidebar-detail: true
+    #content_header: false
+    #content_footer: false
+
