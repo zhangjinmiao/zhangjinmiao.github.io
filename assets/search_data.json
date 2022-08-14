@@ -603,7 +603,7 @@
       "category" : "springboot",
       "content": "基础原理 核心 运行原理 Web 应用系列 web 开发之 web 配置 web 开发之 Thymeleaf web 开发之 JSP 统一异常处理 应用监控系列 Spring Boot-Actuator 文档生成 API 文档生成 数据缓存系列 https://www.zybuluo.com/javazjm/note/932803 Spring Boot-EhCache Spring Boot-Redis Cache Spring Boot-Guava Cache 消息队列系列（MQ） Spring Boot-RabbitMQ Spring Boot-RocketMQ Spring Boot-Kafka 实用技术系列 Spring Boot-Quartz Spring Boot-Email Spring Boot-Shiro Spring Boot-异步方法 Spring Boot-Dubbo 整合 附录： 常用配置：  英文  中文  ",
       "url"      : "http://zhangjinmiao.github.io/springboot/2019/07/01/SpringBoot%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0.html",
-      "keywords" : "spring,spring boot,微服务"
+      "keywords" : "spring,springboot,微服务"
     } ,
   
     {
