@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spring Boot 最佳实践
-categories: SpringBoot
+categories: springboot
 description: springboot 经验
 keywords: springboot, 翻译
 ---

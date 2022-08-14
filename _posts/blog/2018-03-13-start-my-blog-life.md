@@ -3,7 +3,7 @@ layout: post
 title: 开启我的博客生活
 categories: Blog
 description: 从今天开始我的博客
-keywords: blog
+keywords: blog,life
 ---
 
 ### 首记
