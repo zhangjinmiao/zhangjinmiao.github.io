@@ -31,9 +31,9 @@ keywords: Docker,DockerFile,Swarm,docker-machine,MCompose,Docker 学习,服务�
         {% include pagination.html %}
     
         <!-- Comments -->
-       <div class="comment">
+       <!-- <div class="comment">
          {% include comments.html %}
-       </div>
+       </div> -->
     </div>
 
 </div>

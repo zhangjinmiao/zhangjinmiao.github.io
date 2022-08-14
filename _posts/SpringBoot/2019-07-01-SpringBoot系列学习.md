@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot 系列学习
 categories: springboot
 description: spring boot 学习总结
-keywords: spring,spring boot,微服务
+keywords: spring,springboot,微服务
 ---
 
 
