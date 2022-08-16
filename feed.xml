@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://zhangjinmiao.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://zhangjinmiao.github.io/" rel="alternate" type="text/html" /><updated>2022-08-16T21:49:17+08:00</updated><id>http://zhangjinmiao.github.io/feed.xml</id><title type="html">山川尽美</title><subtitle>本站是山川尽美的技术分享驿站，内容涉及Java后端技术：JVM、Spring Boot、Spring Cloud、高并发、多线程、微服务、架构设计、中间件使用等技术知识；还包括日常生活感悟、理财知识等</subtitle><author><name>Zhang jinmiao</name></author><entry><title type="html">微服务常见面试</title><link href="http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.html" rel="alternate" type="text/html" title="微服务常见面试" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98</id><content type="html" xml:base="http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.html">&lt;h1 id=&quot;1微服务篇&quot;&gt;1.微服务篇&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://zhangjinmiao.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://zhangjinmiao.github.io/" rel="alternate" type="text/html" /><updated>2022-08-16T21:51:52+08:00</updated><id>http://zhangjinmiao.github.io/feed.xml</id><title type="html">山川尽美</title><subtitle>本站是山川尽美的技术分享驿站，内容涉及Java后端技术：JVM、Spring Boot、Spring Cloud、高并发、多线程、微服务、架构设计、中间件使用等技术知识；还包括日常生活感悟、理财知识等</subtitle><author><name>Zhang jinmiao</name></author><entry><title type="html">微服务常见面试</title><link href="http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.html" rel="alternate" type="text/html" title="微服务常见面试" /><published>2022-08-16T00:00:00+08:00</published><updated>2022-08-16T00:00:00+08:00</updated><id>http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98</id><content type="html" xml:base="http://zhangjinmiao.github.io/microservice/2022/08/16/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98.html">&lt;h1 id=&quot;1微服务篇&quot;&gt;1.微服务篇&lt;/h1&gt;
 
 &lt;h2 id=&quot;11springcloud常见组件有哪些&quot;&gt;1.1.SpringCloud常见组件有哪些？&lt;/h2&gt;
 
@@ -36,7 +36,7 @@
 
 &lt;p&gt;如图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/image-20210925215305446.png&quot; alt=&quot;image-20210925215305446&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/image-20210925215305446.png&quot; alt=&quot;image-20210925215305446&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;13nacos如何支撑阿里内部数十万服务注册压力&quot;&gt;1.3.Nacos如何支撑阿里内部数十万服务注册压力？&lt;/h2&gt;
 
@@ -113,7 +113,7 @@
 
 &lt;p&gt;如图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/image-20210925220034702.png&quot; alt=&quot;image-20210925220034702&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/image-20210925220034702.png&quot; alt=&quot;image-20210925220034702&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;话术：&lt;/strong&gt;&lt;/p&gt;
 
@@ -296,7 +296,7 @@
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Redis使用单线程&lt;/code&gt;：Memcached是多线程，非阻塞IO复用的网络模型；Redis使用单线程的多路 IO 复用模型。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574821356723.png&quot; alt=&quot;1574821356723&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574821356723.png&quot; alt=&quot;1574821356723&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;32redis的单线程问题&quot;&gt;3.2.Redis的单线程问题&lt;/h2&gt;
 
@@ -438,17 +438,17 @@
 
 &lt;p&gt;主从集群分两种：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574821993599.png&quot; alt=&quot;1574821993599&quot; /&gt; &lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574822026037.png&quot; alt=&quot;1574822026037&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574821993599.png&quot; alt=&quot;1574821993599&quot; /&gt; &lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574822026037.png&quot; alt=&quot;1574822026037&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;带有哨兵的集群：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574822077190.png&quot; alt=&quot;1574822077190&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574822077190.png&quot; alt=&quot;1574822077190&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2）分片集群&lt;/p&gt;
 
 &lt;p&gt;主从集群中，每个节点都要保存所有信息，容易形成木桶效应。并且当数据量较大时，单个机器无法满足需求。此时我们就要使用分片集群了。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574822184467.png&quot; alt=&quot;1574822184467&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574822184467.png&quot; alt=&quot;1574822184467&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;集群特征：&lt;/p&gt;
 
@@ -468,11 +468,11 @@
 
 &lt;p&gt;为了保证Redis中每个节点的高可用，我们还可以给每个节点创建replication（slave节点），如图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574822584357.png&quot; alt=&quot;1574822584357&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574822584357.png&quot; alt=&quot;1574822584357&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;出现故障时，主从可以及时切换：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574822602109.png&quot; alt=&quot;1574822602109&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574822602109.png&quot; alt=&quot;1574822602109&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;34redis的常用数据类型有哪些&quot;&gt;3.4.Redis的常用数据类型有哪些？&lt;/h2&gt;
 
@@ -737,7 +737,7 @@
 
 &lt;p&gt;因此，我们就需要在应用程序与缓存服务之间引入代理，实现Redis和SSD之间的切换，如图：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/image-20200521115702956.png&quot; alt=&quot;image-20200521115702956&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/image-20200521115702956.png&quot; alt=&quot;image-20200521115702956&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;这样的代理方案阿里云提供的就有。当然也有一些开源方案，例如：https://github.com/JingchengLi/swapdb&lt;/p&gt;
 
@@ -789,7 +789,7 @@ end
 
 &lt;p&gt;如果有重入的需求，则除了在锁中记录进程标识，还要记录重试次数，流程如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/2022/wfwms/1574824172228.png&quot; alt=&quot;1574824172228&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/zhangjinmiao/zhangjinmiao.github.io/raw/master/images/blog/2022/wfwms/1574824172228.png&quot; alt=&quot;1574824172228&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;下面我们假设锁的key为“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lock&lt;/code&gt;”，hashKey是当前线程的id：“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;threadId&lt;/code&gt;”，锁自动释放时间假设为20&lt;/p&gt;
 
