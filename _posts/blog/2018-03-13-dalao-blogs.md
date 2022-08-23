@@ -38,6 +38,7 @@ keywords: 汇总,团队,个人,博客
 
 - [黄建宏——Redis 大牛](http://blog.huangz.me/)
 
+- [宋净超-云原生](https://jimmysong.io/)
 
 - [扶墙老师说](https://afoo.me/)
 
@@ -64,9 +65,6 @@ keywords: 汇总,团队,个人,博客
 
 
 - [占小狼](http://www.jianshu.com/u/90ab66c248e6)
-
-
-- [泥瓦匠 BYSocket](http://www.bysocket.com/)
 
 
 - [唐亚峰](http://blog.battcn.com/)
